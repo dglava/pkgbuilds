@@ -1,0 +1,13 @@
+pkgname="numix-mod-openbox-theme"
+pkgver=1
+pkgrel=1
+pkgdesc="Tweaked Numix Openbox theme"
+arch=('any')
+license=('CC-BY-SA')
+
+package() {
+    install -d -m755 "$pkgdir/usr/share/themes/"
+
+    cd ..
+    cp -r Numix-mod "$pkgdir/usr/share/themes/"
+}

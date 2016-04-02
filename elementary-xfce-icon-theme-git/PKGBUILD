@@ -1,0 +1,22 @@
+pkgname=elementary-xfce-icon-theme-git
+pkgver=v0.6.r15.gb16a2c5
+pkgrel=1
+pkgdesc="Elementary icons forked, extended and maintained for Xfce"
+arch=('any')
+url="https://github.com/shimmerproject/elementary-xfce"
+license=('GPL3')
+makedepends=('git')
+source=('git+https://github.com/shimmerproject/elementary-xfce.git')
+md5sums=('SKIP')
+
+pkgver() {
+	cd "$srcdir/elementary-xfce"
+    git describe --long | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
+}
+
+package() {
+	install -d -m755 "$pkgdir/usr/share/icons/"
+	
+	cd "$srcdir/elementary-xfce"
+	cp -r elementary* "$pkgdir/usr/share/icons/"
+}

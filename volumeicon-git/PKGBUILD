@@ -1,0 +1,38 @@
+pkgname=volumeicon-git
+pkgver=0.5.1.r3.g1b271e0
+pkgrel=1
+pkgdesc="Volume control for your system tray"
+arch=("x86_64")
+url="https://github.com/Maato/volumeicon"
+license=('GPL3')
+depends=('gtk3' 'alsa-lib' 'libnotify' 'intltool')
+makedepends=('git')
+source=('git+https://github.com/Maato/volumeicon.git'
+        'bs.po' 'hr.po' 'sr.po')
+md5sums=('SKIP'
+         '46a9366ef1757c99fe29523ce52d3250'
+         '029803676f34d4169f22044012a3a5f6'
+         '89a1bf4959957d4e4cc5d9973fb5dfdf')
+
+pkgver() {
+    cd "$srcdir/${pkgname%-git}"
+    git describe --long --tags | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
+}
+
+prepare() {
+    sed -i '$s/$/ bs hr sr/' "$srcdir/${pkgname%-git}/po/LINGUAS"
+    cat "$srcdir/${pkgname%-git}/po/LINGUAS"
+    cp {bs,hr,sr}.po "$srcdir/${pkgname%-git}/po/"
+}
+
+build() {
+    cd "$srcdir/${pkgname%-git}"
+    ./autogen.sh
+    ./configure --prefix=/usr --enable-notify
+    make
+}
+
+package() {
+    cd "$srcdir/${pkgname%-git}"
+    make DESTDIR="$pkgdir/" install
+}

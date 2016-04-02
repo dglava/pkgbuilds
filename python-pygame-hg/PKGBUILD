@@ -1,0 +1,22 @@
+pkgname=python-pygame-hg
+pkgver=r3449.d61ea8eabd56
+pkgrel=1
+pkgdesc="Python game library"
+arch=('any')
+url="http://www.pygame.org"
+license=('LGPL')
+depends=('python' 'sdl_mixer' 'sdl_ttf' 'sdl_image' 'portmidi')
+optdepends=('python-numpy: for the surfarray module')
+makedepends=('mercurial')
+source=("hg+https://bitbucket.org/pygame/pygame")
+md5sums=('SKIP')
+
+pkgver() {
+    cd "${srcdir}/pygame"
+    printf "r%s.%s" "$(hg identify -n)" "$(hg identify -i)"
+}
+
+package() {
+    cd "${srcdir}/pygame"
+    python setup.py install --root="$pkgdir"
+}

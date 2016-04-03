@@ -3,7 +3,7 @@ pkgver=1
 pkgrel=1
 pkgdesc="Tweaked Numix Openbox theme"
 arch=('any')
-license=('CC-BY-SA')
+license=('GPL3')
 
 package() {
     install -d -m755 "$pkgdir/usr/share/themes/"

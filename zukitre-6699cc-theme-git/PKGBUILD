@@ -15,11 +15,11 @@ pkgver() {
 }
 
 package() {
-    install -d -m755 "$pkgdir/usr/share/themes/"
+    install -d -m755 "$pkgdir/usr/share/themes/Zukitre-6699CC"
 
     # remove git directory and preview picture
     rm -rf "$srcdir/${pkgname%-theme-git}/.git/"
     rm -r "$srcdir/${pkgname%-theme-git}/preview.png"
 
-    cp -r "$srcdir/${pkgname%-theme-git}" "$pkgdir/usr/share/themes/"
+    cp -r $srcdir/${pkgname%-theme-git}/* "$pkgdir/usr/share/themes/Zukitre-6699CC"
 }

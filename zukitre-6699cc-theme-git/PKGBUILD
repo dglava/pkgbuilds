@@ -1,5 +1,5 @@
 pkgname=zukitre-6699cc-theme-git
-pkgver=r10.4fd1350
+pkgver=r13.455c51f
 pkgrel=1
 pkgdesc="Slightly modified Zukitre GTK2/3 themes"
 arch=('any')

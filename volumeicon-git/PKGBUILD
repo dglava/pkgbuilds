@@ -5,8 +5,8 @@ pkgdesc="Volume control for your system tray"
 arch=("x86_64")
 url="https://github.com/Maato/volumeicon"
 license=('GPL3')
-depends=('gtk3' 'alsa-lib' 'libnotify' 'intltool')
-makedepends=('git')
+depends=('gtk3' 'alsa-lib' 'libnotify')
+makedepends=('git' 'intltool')
 source=('git+https://github.com/Maato/volumeicon.git')
 md5sums=('SKIP')
 

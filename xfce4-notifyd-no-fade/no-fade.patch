@@ -1,0 +1,24 @@
+--- xfce4-notifyd-0.2.4/xfce4-notifyd/xfce-notify-window.c	2013-04-21 16:42:08.000000000 +0200
++++ xfce-notify-window.c	2016-05-09 17:47:19.730137584 +0200
+@@ -631,18 +631,9 @@
+ 
+     window->expire_id = 0;
+ 
+-    fade_transparent =
+-        gdk_screen_is_composited(gtk_window_get_screen(GTK_WINDOW(window)));
+-
+-    if(fade_transparent) {
+-        window->fade_id = g_timeout_add(FADE_CHANGE_TIMEOUT,
+-                                        xfce_notify_window_fade_timeout,
+-                                        window);
+-    } else {
+-        /* it might be 800ms early, but that's ok */
+-        g_signal_emit(G_OBJECT(window), signals[SIG_CLOSED], 0,
+-                      XFCE_NOTIFY_CLOSE_REASON_EXPIRED);
+-    }
++    /* it might be 800ms early, but that's ok */
++    g_signal_emit(G_OBJECT(window), signals[SIG_CLOSED], 0,
++                    XFCE_NOTIFY_CLOSE_REASON_EXPIRED);
+ 
+     return FALSE;
+ }

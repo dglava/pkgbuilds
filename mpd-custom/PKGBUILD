@@ -1,0 +1,43 @@
+pkgname=mpd-custom
+_pkgname=mpd
+conflicts=("mpd")
+pkgver=0.19.15
+pkgrel=1
+pkgdesc='Flexible, powerful, server-side application for playing music'
+url='http://www.musicpd.org/'
+license=('GPL')
+arch=('i686' 'x86_64')
+depends=('libao' 'ffmpeg' 'libmodplug' 'audiofile' 'curl' 'faad2'
+         'sqlite' 'wavpack' 'libid3tag' 'yajl' 'libmpdclient'
+         'icu' 'libupnp' 'libsamplerate' 'libsoxr')
+makedepends=('boost' 'doxygen')
+source=("http://www.musicpd.org/download/${_pkgname}/${pkgver%.*}/${_pkgname}-${pkgver}.tar.xz")
+sha1sums=('5c32aff6ea3f031de5802a39a222efd7e4b1bafd')
+
+build() {
+    # remove ipv6 support; use ffmpeg for mp3 decoding instead of mad;
+    # disable unused stuff like shout, mms, nfs and audio cd support
+    cd "${srcdir}/${_pkgname}-${pkgver}"
+    ./configure \
+        --prefix=/usr \
+        --sysconfdir=/etc \
+        --enable-libmpdclient \
+        --enable-pipe-output \
+        --enable-pulse \
+        --disable-sidplay \
+        --disable-smbclient \
+        --disable-ipv6 \
+        --disable-shout \
+        --disable-mms \
+        --disable-nfs \
+        --disable-mad \
+        --disable-cdioparanoia \
+        --with-systemdsystemunitdir=/usr/lib/systemd/system \
+        --with-zeroconf=no
+    make
+}
+
+package() {
+    cd "${srcdir}/${_pkgname}-${pkgver}"
+    make DESTDIR="${pkgdir}" install
+}

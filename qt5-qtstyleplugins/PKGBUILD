@@ -6,7 +6,10 @@ pkgdesc="Additional style plugins for Qt5"
 arch=('i686' 'x86_64')
 url="http://code.qt.io/cgit/qt/qtstyleplugins.git"
 license=('LGPL')
-depends=('qt5-base' 'gconf' 'gtk2')
+depends=('qt5-base')
+makedepends=('gtk2' 'gconf' 'git')
+optdepends('gconf: for the gtk2 style'
+           'gtk2: for the gtk2 style')
 source=("git://code.qt.io/qt/qtstyleplugins.git")
 sha1sums=(SKIP)
 

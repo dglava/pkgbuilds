@@ -1,7 +1,7 @@
 pkgname=mpd-custom
 _pkgname=mpd
 conflicts=("mpd")
-pkgver=0.19.16
+pkgver=0.19.17
 pkgrel=1
 pkgdesc='Flexible, powerful, server-side application for playing music'
 url='http://www.musicpd.org/'
@@ -12,7 +12,7 @@ depends=('libao' 'ffmpeg' 'libmodplug' 'audiofile' 'curl' 'faad2'
          'icu' 'libupnp' 'libsamplerate' 'libsoxr')
 makedepends=('boost' 'doxygen')
 source=("http://www.musicpd.org/download/${_pkgname}/${pkgver%.*}/${_pkgname}-${pkgver}.tar.xz")
-sha1sums=('2b110898c8365ce69a8cedd01db2404748c4c09c')
+sha1sums=('88d98884a262af3be74e2791ae9e5eb898f6dfbb')
 
 build() {
     # remove ipv6 support; use ffmpeg for mp3 decoding instead of mad;
@@ -32,6 +32,16 @@ build() {
         --disable-nfs \
         --disable-mad \
         --disable-cdioparanoia \
+        --disable-fifo \
+        --disable-roar \
+        --disable-documentation \
+        --disable-fluidsynth \
+        --disable-gme \
+        --disable-soundclound \
+        --disable-oss \
+        --disable-openal \
+        --disable-widlmidi \
+        --disable-neighbor-plugins \
         --with-systemdsystemunitdir=/usr/lib/systemd/system \
         --with-zeroconf=no
     make

@@ -1,4 +1,4 @@
-pkgname=qt5-qtstyleplugins
+pkgname=qt5-qtstyleplugins-git
 _pkgname=qtstyleplugins
 pkgver=v5.0.0.r7.g5f2549b
 pkgrel=1

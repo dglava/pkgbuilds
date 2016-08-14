@@ -1,6 +1,6 @@
 _pkgname=xfce4-notifyd
 pkgname=xfce4-notifyd-no-fade
-pkgver=0.2.4
+pkgver=0.3.0
 pkgrel=3
 pkgdesc="Notification daemon for the Xfce desktop"
 arch=('i686' 'x86_64')

@@ -1,7 +1,7 @@
 _pkgname=xfce4-notifyd
 pkgname=xfce4-notifyd-no-fade
 pkgver=0.3.0
-pkgrel=3
+pkgrel=1
 pkgdesc="Notification daemon for the Xfce desktop"
 arch=('i686' 'x86_64')
 url="http://goodies.xfce.org/projects/applications/xfce4-notifyd"
@@ -11,8 +11,8 @@ makedepends=('intltool')
 provides=('notification-daemon')
 conflicts=('xfce4-notifyd')
 source=("http://archive.xfce.org/src/apps/$_pkgname/0.3/$_pkgname-$pkgver.tar.bz2" "no-fade.patch")
-sha256sums=("8c7ed62f9496816d1391281f77d1b32216f9bf6fd22fbe4f6f3f4e07a6bbced0"
-"980cee3fd94d28f3039a726768126dbb10e358cfab6435327474bb1c900d3601")
+sha256sums=('7076081424932b40d03366a7518daf495f81eb780f376819e59e76d65d811100'
+            '980cee3fd94d28f3039a726768126dbb10e358cfab6435327474bb1c900d3601')
 
 prepare() {
   cd "$srcdir/$_pkgname-$pkgver/"

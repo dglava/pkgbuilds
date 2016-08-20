@@ -1,0 +1,27 @@
+pkgname=qt5gtk2-git
+pkgver=0.3.r0.g6f6f63d
+pkgrel=1
+pkgdesc="GTK+2.0 integration plugins for Qt5"
+arch=('i686' 'x86_64')
+url="https://bitbucket.org/trialuser02/qt5gtk2"
+depends=('qt5-base' 'gtk2' 'libx11')
+makedepends=('git')
+install='qt5gtk2.install'
+source=("git+https://bitbucket.org/trialuser02/qt5gtk2.git")
+md5sums=('SKIP')
+
+pkgver() {
+  cd "$srcdir/${pkgname%-git}"
+  git describe --long | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
+}
+
+build() {
+    cd "$srcdir/${pkgname%-git}"
+    qmake PREFIX='/usr' LIBDIR='/usr/lib'
+    make
+}
+
+package() {
+    cd "$srcdir/${pkgname%-git}"
+    make INSTALL_ROOT="$pkgdir" install
+}

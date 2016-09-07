@@ -1,5 +1,5 @@
 pkgname=cheser-icon-theme-git
-pkgver=3.18.1.r10.g2f4677e
+pkgver=3.20.0.r0.g803dd4d
 pkgrel=1
 pkgdesc="Tango/GNOME style icons"
 arch=('any')

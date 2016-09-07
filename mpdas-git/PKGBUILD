@@ -1,6 +1,6 @@
 _pkgname=mpdas
 pkgname=mpdas-git
-pkgver=0.3.1.r38.g90dd5f7
+pkgver=0.3.1.r39.g7221f06
 pkgrel=1
 pkgdesc='Music scrobbler for mpd'
 arch=('x86_64' 'i686')

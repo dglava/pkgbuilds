@@ -1,5 +1,5 @@
 pkgname=volumeicon-git
-pkgver=0.5.1.r18.g353f164
+pkgver=0.5.1.r20.g4e1f5a7
 pkgrel=1
 pkgdesc="Volume control for your system tray"
 arch=("x86_64")

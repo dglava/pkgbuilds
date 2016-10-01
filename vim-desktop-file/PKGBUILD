@@ -1,0 +1,17 @@
+# Provides a .desktop file which enables Vim to be open
+# text files from a GUI file manager;
+# Specifically made for xfce4-terminal; to make it work with other
+# terminals, edit the vim.desktop file and the Exec= line
+pkgname=vim-desktop-file
+pkgver=1.0
+pkgrel=1
+pkgdesc="Desktop file for Vim"
+arch=('any')
+license=('GPL3')
+depends=('vim')
+source=("vim.desktop")
+md5sums=('258047d27e9ca432c6563f7c71d123a6')
+
+package() {
+    install -Dm644 "vim.desktop" "$pkgdir/usr/share/applications/vim.desktop"
+}

@@ -9,7 +9,7 @@ license=('BSD')
 depends=('libmpdclient' 'curl')
 makedepends=('git')
 source=("git+https://github.com/hrkfdn/mpdas.git")
-sha256sums=('SKIP')
+sha1sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/${pkgname%-git}"
@@ -30,6 +30,6 @@ build() {
 package() {
   cd "$srcdir/${pkgname%-git}"
   make install PREFIX="$pkgdir"/usr MANPREFIX="$pkgdir/usr/share/man/man1"
-  install -Dm644 mpdasrc.example "$pkgdir/etc/mpdasrc"
-  install -Dm644 LICENSE "$pkgdir/usr/share/licenses/${pkgname%-git}/LICENSE"
+  install -Dm644 "$srcdir/${pkgname%-git}"/mpdasrc.example "$pkgdir/etc/mpdasrc"
+  install -Dm644 "$srcdir/${pkgname%-git}"/LICENSE "$pkgdir/usr/share/licenses/${pkgname%-git}/LICENSE"
 }

@@ -1,5 +1,5 @@
 pkgname=python-pygame-hg
-pkgver=r3449.d61ea8eabd56
+pkgver=r3589.37612e0f45ca
 pkgrel=1
 pkgdesc="Python game library"
 arch=('any')

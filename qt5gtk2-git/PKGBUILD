@@ -1,5 +1,5 @@
 pkgname=qt5gtk2-git
-pkgver=0.3.r0.g6f6f63d
+pkgver=0.4.r0.g70b21ae
 pkgrel=1
 pkgdesc="GTK+2.0 integration plugins for Qt5"
 arch=('i686' 'x86_64')

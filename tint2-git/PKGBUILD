@@ -1,5 +1,5 @@
 pkgname=tint2-git
-pkgver=0.12.7.r66.g219b24c
+pkgver=0.13.r11.gbe710ff
 pkgrel=1
 pkgdesc='Basic, good-looking task manager for WMs'
 arch=('x86_64' 'i686')

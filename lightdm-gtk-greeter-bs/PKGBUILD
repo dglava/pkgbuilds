@@ -1,0 +1,50 @@
+# Copy pasted from the official Arch package
+# The only change is the updated Bosnian translation file
+# This package will become obsolete once the changes are merged
+# upstream, but it might take a while because the system is really
+# flawed
+
+pkgname=lightdm-gtk-greeter-bs
+pkgver=2.0.2
+pkgrel=1
+epoch=1
+pkgdesc='GTK+ greeter for LightDM - updated Bosnian translation'
+arch=('i686' 'x86_64')
+url='https://launchpad.net/lightdm-gtk-greeter'
+license=('GPL3' 'LGPL3')
+depends=('gtk3' 'lightdm')
+makedepends=('exo' 'gobject-introspection' 'intltool')
+conflicts=('lightdm-gtk-greeter')
+replaces=('lightdm-gtk2-greeter' 'lightdm-gtk3-greeter' 'lightdm-gtk-greeter')
+backup=('etc/lightdm/lightdm-gtk-greeter.conf')
+source=("https://launchpad.net/lightdm-gtk-greeter/${pkgver%.?}/${pkgver}/+download/lightdm-gtk-greeter-${pkgver}.tar.gz"
+        "bs.po")
+sha256sums=('8ee6d93d1d6837b3590f64ac4d5bac5db888a8861dff1cb2ef10f7816ad36690'
+            '19ce24eb8678c626d2b256f6c8b8d4b0aa378ce0763f5406cc124613e54e7948')
+
+prepare() {
+  # copies the updated translation file and replaces old one
+  cp "bs.po" "$srcdir/po"
+}
+
+build() {
+  cd lightdm-gtk-greeter-${pkgver}
+
+  ./configure \
+    --prefix='/usr' \
+    --libexecdir='/usr/lib/lightdm' \
+    --sbindir='/usr/bin' \
+    --sysconfdir='/etc' \
+    --with-libxklavier \
+    --enable-kill-on-sigterm \
+    --disable-libido \
+    --disable-libindicator \
+    --disable-static
+  make
+}
+
+package() {
+  cd lightdm-gtk-greeter-${pkgver}
+
+  make DESTDIR="${pkgdir}" install
+}

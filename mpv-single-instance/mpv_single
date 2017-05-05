@@ -1,0 +1,6 @@
+#!/bin/bash
+
+pid="$(pidof mpv)"
+
+kill "$pid"
+mpv "$@"

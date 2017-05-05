@@ -2,5 +2,8 @@
 
 pid="$(pidof mpv)"
 
-kill "$pid"
+if [[ $pid ]]; then
+  kill "$pid"
+fi
+
 mpv "$@"

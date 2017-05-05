@@ -1,6 +1,6 @@
 pkgname=mpv-single-instance
 pkgver=1.0
-pkgrel=1
+pkgrel=3
 pkgdesc="Single instance desktop file for mpv"
 arch=('any')
 url="https://github.com/dglava/pkgbuilds"
@@ -13,6 +13,6 @@ md5sums=('6f7202646d4ccb5ab264946297f67ca1'
 package() {
   install -d "$pkgdir/usr/bin/"
   install -d "$pkgdir/usr/share/applications"
-  install -m 744 -D mpv_single "$pkgdir/usr/bin/"
+  install -m 755 -D mpv_single "$pkgdir/usr/bin/"
   install -m 644 -D mpv-single.desktop "$pkgdir/usr/share/applications"
 }

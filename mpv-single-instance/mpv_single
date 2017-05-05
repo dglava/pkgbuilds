@@ -6,4 +6,4 @@ if [[ $pid ]]; then
   kill "$pid"
 fi
 
-mpv "$@"
+mpv "$1"

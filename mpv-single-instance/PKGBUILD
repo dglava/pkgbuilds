@@ -1,13 +1,13 @@
 pkgname=mpv-single-instance
 pkgver=1.0
-pkgrel=4
+pkgrel=1
 pkgdesc="Single instance desktop file for mpv"
 arch=('any')
 url="https://github.com/dglava/pkgbuilds"
 license=('GPL')
 depends=('mpv')
 source=("mpv_single" "mpv-single.desktop")
-md5sums=('41382b0075501832126c44a5b54353c0'
+md5sums=('92b66e72c8a2af1e244d15ac99217603'
          'b301790b6879141002602e7c5ae559f3')
 
 package() {

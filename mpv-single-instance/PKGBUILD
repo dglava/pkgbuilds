@@ -7,7 +7,7 @@ url="https://github.com/dglava/pkgbuilds"
 license=('GPL')
 depends=('mpv')
 source=("mpv_single" "mpv-single.desktop")
-md5sums=('29bfdec70b019f696759e03fb85102f9'
+md5sums=('0abc7093b00916f8c58ecd64459b6a2f'
          'b301790b6879141002602e7c5ae559f3')
 
 package() {

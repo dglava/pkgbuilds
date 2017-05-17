@@ -6,4 +6,4 @@ if [[ "$pid" ]]; then
   kill "$pid"
 fi
 
-mpv "$1"
+mpv --player-operation-mode=pseudo-gui "$1"

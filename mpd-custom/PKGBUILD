@@ -1,7 +1,7 @@
 pkgname=mpd-custom
 _pkgname=mpd
 conflicts=("mpd")
-pkgver=0.20.7
+pkgver=0.20.9
 pkgrel=1
 pkgdesc='Flexible, powerful, server-side application for playing music'
 url='http://www.musicpd.org/'
@@ -12,7 +12,7 @@ depends=('libao' 'ffmpeg' 'libmodplug' 'audiofile' 'curl' 'faad2'
          'icu' 'libupnp' 'libsamplerate' 'libsoxr')
 makedepends=('boost' 'doxygen')
 source=("https://www.musicpd.org/download/mpd/0.20/mpd-${pkgver}.tar.xz")
-sha1sums=('0871d78c59699750f17b782ecca01dbc4f92dea8')
+sha1sums=('3d6ee5a903ce2c4925ee954543f37abbe977d20e')
 
 
 build() {

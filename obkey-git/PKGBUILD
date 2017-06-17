@@ -1,5 +1,5 @@
 pkgname=obkey-git
-pkgver=v1.0.r43.gab8b027
+pkgver=v1.0.r45.g3b3bbdc
 pkgrel=1
 pkgdesc="Openbox keyboard shortcut editor"
 arch=('any')

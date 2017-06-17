@@ -1,0 +1,22 @@
+pkgname=puddletag-python3-git
+pkgver=v1.2.0.r23.g1b6a5e9
+pkgrel=1
+pkgdesc="A tag editor for GNU/Linux - Python 3 version"
+arch=('any')
+url="http://docs.puddletag.net/"
+license=('GPL3')
+depends=('python' 'python-pyqt4' 'python-pyparsing' 'python-mutagen'
+         'python-configobj')
+conflicts=('puddletag')
+source=("git+https://github.com/keithgg/puddletag.git#branch=py3")
+md5sums=('SKIP')
+
+pkgver() {
+  cd "${pkgname%-python3-git}"
+  git describe --long --tags | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
+}
+
+package() {
+	cd "${pkgname%-python3-git}/source"
+  python setup.py install --root="${pkgdir}"
+}

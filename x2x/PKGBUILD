@@ -1,0 +1,30 @@
+pkgname=x2x-git
+pkgver=r118.5382754
+pkgrel=1
+pkgdesc="x2x allows the keyboard and mouse to be used to control another X display"
+arch=("x86_64")
+url="https://github.com/dottedmag/x2x"
+license=('BSD' 'MIT')
+depends=('libxext' 'libxtst')
+makedepends=('git')
+conflicts=("x2x")
+source=('git+https://github.com/dottedmag/x2x.git')
+md5sums=('SKIP')
+
+pkgver() {
+  cd "$srcdir/${pkgname%-git}"
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+build() {
+	cd "$srcdir/${pkgname%-git}"
+  ./bootstrap.sh
+  ./configure --prefix=/usr
+  make
+}
+
+package() {
+	cd "$srcdir/${pkgname%-git}"
+	make DESTDIR="$pkgdir/" install
+  install -Dm644 COPYING "${pkgdir}/usr/share/licenses/${pkgname%-git}/LICENSE"
+}

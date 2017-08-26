@@ -1,6 +1,5 @@
-_pkgname=mpdas
 pkgname=mpdas-git
-pkgver=0.4.3.r0.gd96b61e
+pkgver=0.4.3.r7.g1bd559f
 pkgrel=1
 pkgdesc='Music scrobbler for mpd'
 arch=('x86_64' 'i686')
@@ -14,12 +13,6 @@ sha1sums=('SKIP')
 pkgver() {
   cd "$srcdir/${pkgname%-git}"
   git describe --long | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
-}
-
-prepare() {
-  cd "$srcdir/${pkgname%-git}"
-  # change config file location to ~/.config/mpdas/
-  sed -i 's/path.append("\/.mpdasrc");/path.append("\/.config\/mpdas\/mpdasrc");/g' main.cpp
 }
 
 build() {

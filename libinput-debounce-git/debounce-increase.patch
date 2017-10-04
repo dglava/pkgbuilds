@@ -1,0 +1,11 @@
+--- src/evdev-fallback.c	2017-10-04 15:56:09.058004996 +0200
++++ src/evdev-fallback-new.c	2017-10-04 16:08:49.887111227 +0200
+@@ -30,7 +30,7 @@
+
+ #include "evdev.h"
+
+-#define	DEBOUNCE_TIME ms2us(12)
++#define	DEBOUNCE_TIME ms2us(54)
+
+ struct fallback_dispatch {
+ 	struct evdev_dispatch base;

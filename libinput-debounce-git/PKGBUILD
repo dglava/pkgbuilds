@@ -5,7 +5,7 @@ pkgrel=1
 pkgdesc='Input device management and event handling library - increased debounce timeout'
 arch=(i686 x86_64)
 url='http://freedesktop.org/wiki/Software/libinput/'
-provides=("libinput=${pkgver}")
+provides=("libinput")
 license=('MIT')
 depends=('mtdev' 'systemd' 'libevdev' 'libwacom')
 checkdepends=('valgrind')

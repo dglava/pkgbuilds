@@ -18,9 +18,11 @@ conflicts=('lightdm-gtk-greeter')
 replaces=('lightdm-gtk2-greeter' 'lightdm-gtk3-greeter' 'lightdm-gtk-greeter')
 backup=('etc/lightdm/lightdm-gtk-greeter.conf')
 source=("https://launchpad.net/lightdm-gtk-greeter/${pkgver%.?}/${pkgver}/+download/lightdm-gtk-greeter-${pkgver}.tar.gz"
-        "lightdm-gtk-greeter.mo")
-sha256sums=('8ee6d93d1d6837b3590f64ac4d5bac5db888a8861dff1cb2ef10f7816ad36690'
-            'dca775e35f45d2524807e626060509ac40244b11696f84a7f8341027a91c368c')
+        "lightdm-gtk-greeter.mo"
+        "lightdm-gtk-greeter-bs.desktop")
+sha1sums=('9d04c73dd583cf738767a71f6c05642142e3602c'
+          '911c9d56d0cf844d40b591f94c682aa1e275fe9b'
+          '56f4dc405d56a94d5d9657c06a3877fd10ab5ec1')
 build() {
   cd lightdm-gtk-greeter-${pkgver}
 
@@ -45,4 +47,9 @@ package() {
   # copying a precompiled one, because make fails to create a proper
   # and complete translation if I feed it the .po file (I don't know why)
   cp "$srcdir/lightdm-gtk-greeter.mo" "$pkgdir/usr/share/locale/bs/LC_MESSAGES/"
+  # copy the desktop file for the greeter which selects the bosnian language.
+  # this way the greeter's language is independent from the set system language,
+  # through /etc/locale.conf.
+  # to enable it change the greeter in lightdm.conf to lightdm-gtk-greeter-bs
+  cp "$srcdir/lightdm-gtk-greeter-bs.desktop" "$pkgdir/usr/share/xgreeters/"
 }

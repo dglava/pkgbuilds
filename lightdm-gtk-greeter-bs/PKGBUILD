@@ -1,11 +1,8 @@
 # Copy pasted from the official Arch package
-# The only change is the updated Bosnian translation file
-# This package will become obsolete once the changes are merged
-# upstream, but it might take a while because the system is really
-# flawed
-
+# Adds an additional desktop file which starts the greeter with the
+# LANGUAGE variable set to bosnian
 pkgname=lightdm-gtk-greeter-bs
-pkgver=2.0.2
+pkgver=2.0.3
 pkgrel=1
 epoch=1
 pkgdesc='GTK+ greeter for LightDM - updated Bosnian translation'
@@ -20,7 +17,7 @@ backup=('etc/lightdm/lightdm-gtk-greeter.conf')
 source=("https://launchpad.net/lightdm-gtk-greeter/${pkgver%.?}/${pkgver}/+download/lightdm-gtk-greeter-${pkgver}.tar.gz"
         "lightdm-gtk-greeter.mo"
         "lightdm-gtk-greeter-bs.desktop")
-sha1sums=('9d04c73dd583cf738767a71f6c05642142e3602c'
+sha1sums=('55f46ca92633e0613ced228b2c2bf06ba73cfc39'
           '911c9d56d0cf844d40b591f94c682aa1e275fe9b'
           '56f4dc405d56a94d5d9657c06a3877fd10ab5ec1')
 build() {
@@ -43,10 +40,6 @@ package() {
   cd lightdm-gtk-greeter-${pkgver}
 
   make DESTDIR="${pkgdir}" install
-  # copy the precompiled, updated translation file
-  # copying a precompiled one, because make fails to create a proper
-  # and complete translation if I feed it the .po file (I don't know why)
-  cp "$srcdir/lightdm-gtk-greeter.mo" "$pkgdir/usr/share/locale/bs/LC_MESSAGES/"
   # copy the desktop file for the greeter which selects the bosnian language.
   # this way the greeter's language is independent from the set system language,
   # through /etc/locale.conf.

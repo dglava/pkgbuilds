@@ -11,19 +11,19 @@ source=("git+https://github.com/nomacs/nomacs.git")
 md5sums=('SKIP')
 
 pkgver() {
-    cd "${pkgname%-git}"
-    git describe --long | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
+  cd "${pkgname%-git}"
+  git describe --long | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
 }
 
 build() {
-    cd "${pkgname%-git}/ImageLounge"
-    mkdir "build"
-    cd "build"
-    cmake .. -DCMAKE_INSTALL_PREFIX=/usr -DENABLE_PLUGINS=OFF
-    make
+  cd "${pkgname%-git}/ImageLounge"
+  mkdir "build"
+  cd "build"
+  cmake .. -DCMAKE_INSTALL_PREFIX=/usr -DENABLE_PLUGINS=OFF
+  make
 }
 
 package() {
-    cd "${pkgname%-git}/ImageLounge/build"
-    make DESTDIR="$pkgdir/" install
+  cd "${pkgname%-git}/ImageLounge/build"
+  make DESTDIR="$pkgdir/" install
 }

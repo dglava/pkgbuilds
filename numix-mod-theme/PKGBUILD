@@ -6,8 +6,8 @@ arch=('any')
 license=('GPL3')
 
 package() {
-    install -d -m755 "$pkgdir/usr/share/themes/"
+  install -d -m755 "$pkgdir/usr/share/themes/"
 
-    cd ..
-    cp -r Numix-mod "$pkgdir/usr/share/themes/"
+  cd ..
+  cp -r Numix-mod "$pkgdir/usr/share/themes/"
 }

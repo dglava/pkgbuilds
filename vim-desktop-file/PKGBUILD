@@ -13,5 +13,5 @@ source=("vim.desktop")
 md5sums=('258047d27e9ca432c6563f7c71d123a6')
 
 package() {
-    install -Dm644 "vim.desktop" "$pkgdir/usr/share/applications/vim.desktop"
+  install -Dm644 "vim.desktop" "$pkgdir/usr/share/applications/vim.desktop"
 }

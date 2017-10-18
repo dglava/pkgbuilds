@@ -16,12 +16,12 @@ pkgver() {
 }
 
 build() {
-    cd "$srcdir/${pkgname%-git}"
-    qmake PREFIX='/usr' LIBDIR='/usr/lib'
-    make
+  cd "$srcdir/${pkgname%-git}"
+  qmake PREFIX='/usr' LIBDIR='/usr/lib'
+  make
 }
 
 package() {
-    cd "$srcdir/${pkgname%-git}"
-    make INSTALL_ROOT="$pkgdir" install
+  cd "$srcdir/${pkgname%-git}"
+  make INSTALL_ROOT="$pkgdir" install
 }

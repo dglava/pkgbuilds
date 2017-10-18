@@ -15,40 +15,40 @@ sha1sums=('acb9c08a855f5777e4ecd4507c8964794a71e6b1')
 
 
 build() {
-    # remove ipv6 support; use ffmpeg for mp3 decoding instead of mad;
-    # disable unused stuff like shout, mms, nfs and audio cd support
-    cd "${srcdir}/${pkgname%-custom}-${pkgver}"
-    ./configure \
-        --prefix=/usr \
-        --sysconfdir=/etc \
-        --enable-libmpdclient \
-        --enable-pipe-output \
-        --enable-pulse \
-        --disable-sidplay \
-        --disable-smbclient \
-        --disable-ipv6 \
-        --disable-shout \
-        --disable-mms \
-        --disable-nfs \
-        --disable-mad \
-        --disable-cdio-paranoia \
-        --disable-fifo \
-        --disable-roar \
-        --disable-documentation \
-        --disable-fluidsynth \
-        --disable-gme \
-        --disable-soundcloud \
-        --disable-oss \
-        --disable-openal \
-        --disable-wildmidi \
-        --disable-neighbor-plugins \
-        --disable-mpg123 \
-        --with-systemdsystemunitdir=/usr/lib/systemd/system \
-        --with-zeroconf=no
-    make
+  # remove ipv6 support; use ffmpeg for mp3 decoding instead of mad;
+  # disable unused stuff like shout, mms, nfs and audio cd support
+  cd "${srcdir}/${pkgname%-custom}-${pkgver}"
+  ./configure \
+    --prefix=/usr \
+    --sysconfdir=/etc \
+    --enable-libmpdclient \
+    --enable-pipe-output \
+    --enable-pulse \
+    --disable-sidplay \
+    --disable-smbclient \
+    --disable-ipv6 \
+    --disable-shout \
+    --disable-mms \
+    --disable-nfs \
+    --disable-mad \
+    --disable-cdio-paranoia \
+    --disable-fifo \
+    --disable-roar \
+    --disable-documentation \
+    --disable-fluidsynth \
+    --disable-gme \
+    --disable-soundcloud \
+    --disable-oss \
+    --disable-openal \
+    --disable-wildmidi \
+    --disable-neighbor-plugins \
+    --disable-mpg123 \
+    --with-systemdsystemunitdir=/usr/lib/systemd/system \
+    --with-zeroconf=no
+  make
 }
 
 package() {
-    cd "${srcdir}/${pkgname%-custom}-${pkgver}"
-    make DESTDIR="${pkgdir}" install
+  cd "${srcdir}/${pkgname%-custom}-${pkgver}"
+  make DESTDIR="${pkgdir}" install
 }

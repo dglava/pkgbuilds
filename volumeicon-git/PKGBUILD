@@ -11,18 +11,18 @@ source=('git+https://github.com/Maato/volumeicon.git')
 md5sums=('SKIP')
 
 pkgver() {
-    cd "$srcdir/${pkgname%-git}"
-    git describe --long --tags | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
+  cd "$srcdir/${pkgname%-git}"
+  git describe --long --tags | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
 }
 
 build() {
-    cd "$srcdir/${pkgname%-git}"
-    ./autogen.sh
-    ./configure --prefix=/usr --enable-notify
-    make
+  cd "$srcdir/${pkgname%-git}"
+  ./autogen.sh
+  ./configure --prefix=/usr --enable-notify
+  make
 }
 
 package() {
-    cd "$srcdir/${pkgname%-git}"
-    make DESTDIR="$pkgdir/" install
+  cd "$srcdir/${pkgname%-git}"
+  make DESTDIR="$pkgdir/" install
 }

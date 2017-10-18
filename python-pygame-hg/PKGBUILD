@@ -10,7 +10,7 @@ source=("https://bitbucket.org/pygame/pygame/get/${pkgver}.tar.gz")
 md5sums=('be31ec2988b5502168d8188569bb4653')
 
 package() {
-    cd "${srcdir}/pygame-pygame-2caabb5e6cae"
-    python config.py -auto
-    python setup.py install --root="$pkgdir"
+  cd "${srcdir}/pygame-pygame-2caabb5e6cae"
+  python config.py -auto
+  python setup.py install --root="$pkgdir"
 }

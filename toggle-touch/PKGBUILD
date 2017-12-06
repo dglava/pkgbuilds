@@ -1,0 +1,14 @@
+pkgname=toggle-touch
+pkgver=1.0
+pkgrel=1
+pkgdesc="Toggles the touchpad on and off"
+arch=('any')
+url="http://dglava.github.io"
+license=('GPL')
+depends=('xorg-xinput' 'libnotify')
+source=('toggle-touch')
+md5sums=('6264df704c665afa8510117e24a62e79')
+
+package() {
+	install -Dm 755 "${srcdir}/toggle-touch" "${pkgdir}/usr/bin/toggle-touch"
+}

@@ -1,6 +1,6 @@
 # PKGBUILD modifed from https://aur.archlinux.org/packages/libinput-git/
-pkgname=libinput-debounce-git
-pkgver=1.8.901.r3.g3b0f1d7
+pkgname=libinput-debounce
+pkgver=1.9.3
 pkgrel=1
 pkgdesc='Input device management and event handling library - increased debounce timeout'
 arch=(i686 x86_64)
@@ -11,23 +11,18 @@ depends=('mtdev' 'systemd' 'libevdev' 'libwacom')
 checkdepends=('valgrind')
 makedepends=('git' 'meson' 'doxygen' 'graphviz' 'gtk3')
 conflicts=('libinput')
-source=("git://anongit.freedesktop.org/wayland/libinput"
+source=("https://www.freedesktop.org/software/libinput/libinput-${pkgver}.tar.xz"
         "debounce-increase.patch")
 sha1sums=('SKIP'
           'e25228e28c8df78a803a6f45d563b331e36a9a81')
 
-pkgver() {
-	cd libinput
-	git describe --long | sed -r 's/([^-]*-g)/r\1/;s/-/./g'
-}
-
 prepare() {
-  cd "$srcdir/libinput"
+  cd "$srcdir/libinput-${pkgver}"
   patch -p0 < "$srcdir/debounce-increase.patch"
 }
 
 build() {
-	cd libinput
+	cd "libinput-${pkgver}"
 	meson build --prefix=/usr \
 	      --buildtype=release \
 	      --libexecdir=/usr/lib \
@@ -36,7 +31,7 @@ build() {
 }
 
 package() {
-	cd libinput
+	cd "libinput-${pkgver}"
 	DESTDIR="$pkgdir" ninja -C build install
 
 	install -Dm644 COPYING "$pkgdir/usr/share/licenses/$pkgname/COPYING"

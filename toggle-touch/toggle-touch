@@ -16,7 +16,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-id=$(xinput | grep -oP "(?<=id=)\d*")
+id=$(xinput | grep -i touchpad | grep -oP "(?<=id=)\d*")
 
 if xinput list-props "$id" | grep -q "Device Enabled.*1$"; then
   xinput disable "$id"

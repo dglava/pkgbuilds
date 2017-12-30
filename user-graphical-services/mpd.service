@@ -1,0 +1,9 @@
+[Unit]
+Description=Music Player Daemon
+
+[Service]
+Type=notify
+ExecStart=/usr/bin/mpd --no-daemon
+
+[Install]
+WantedBy=user-graphical.target

@@ -1,0 +1,9 @@
+[Unit]
+Description=Dynamic window manager actions
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/orcsome
+
+[Install]
+WantedBy=user-graphical.target

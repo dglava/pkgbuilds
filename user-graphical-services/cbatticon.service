@@ -1,0 +1,9 @@
+[Unit]
+Description=Battery tray icon
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/cbatticon -i symbolic -l 10 -r 2
+
+[Install]
+WantedBy=user-graphical.target

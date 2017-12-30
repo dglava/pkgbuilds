@@ -1,0 +1,11 @@
+[Unit]
+Description=MPD scrobbler
+Requires=mpd.service
+After=mpd.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/mpdas
+
+[Install]
+WantedBy=user-graphical.target

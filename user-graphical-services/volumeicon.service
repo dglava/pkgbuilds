@@ -1,0 +1,9 @@
+[Unit]
+Description=Volume tray icon
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/volumeicon
+
+[Install]
+WantedBy=user-graphical.target

@@ -1,0 +1,9 @@
+[Unit]
+Description=Disables DPMS when required
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/firefox-dpms
+
+[Install]
+WantedBy=user-graphical.target

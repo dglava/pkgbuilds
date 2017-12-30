@@ -1,0 +1,31 @@
+pkgname=user-graphical-services
+pkgver=1.0
+pkgrel=1
+pkgdesc="Systemd services for GUI programs started after logging in"
+arch=('any')
+url="http://dglava.github.io"
+license=('GPL')
+source=("cbatticon.service"
+        "compton.service"
+        "firefox-dpms.service"
+        "mpdas.service"
+        "mpd.service"
+        "orcsome.service"
+        "tint2.service"
+        "user-graphical.target"
+        "volumeicon.service")
+md5sums=('413f178c75433818ea0a65a30c555fab'
+         '5307618841a266a9ac74b9217af849fa'
+         '4c9af19f5f924b58d992019925408283'
+         '83a81af87c2baf0b76235f3b6f6dbf1f'
+         'ba87837b8c5432c10dd09941f93ab9f6'
+         'af4183ce2e9214db424abe28b634f0e4'
+         '6256080fae896de81298f741681cb861'
+         '6c9051cad2af57064b731071995472ae'
+         'd2c92c16e834afffec6b77f63618eaf3')
+
+package() {
+	cd "$srcdir"
+  install -d "$pkgdir/usr/lib/systemd/user"
+  install -m 644 "$srcdir"/* "$pkgdir/usr/lib/systemd/user/"
+}

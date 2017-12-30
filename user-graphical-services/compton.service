@@ -1,0 +1,9 @@
+[Unit]
+Description=Desktop compositor
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/compton
+
+[Install]
+WantedBy=user-graphical.target

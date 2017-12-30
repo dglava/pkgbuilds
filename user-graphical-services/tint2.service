@@ -1,0 +1,9 @@
+[Unit]
+Description=Tint2 taskbar
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/tint2
+
+[Install]
+WantedBy=user-graphical.target

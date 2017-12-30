@@ -3,7 +3,8 @@ Description=Desktop compositor
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/compton
+Environment=CONFIG="/home/dino/.config/compton/compton.conf"
+ExecStart=/usr/bin/compton --config ${CONFIG}
 
 [Install]
 WantedBy=user-graphical.target

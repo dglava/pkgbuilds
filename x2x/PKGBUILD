@@ -17,14 +17,14 @@ pkgver() {
 }
 
 build() {
-	cd "$srcdir/${pkgname%-git}"
+  cd "$srcdir/${pkgname%-git}"
   ./bootstrap.sh
   ./configure --prefix=/usr
   make
 }
 
 package() {
-	cd "$srcdir/${pkgname%-git}"
-	make DESTDIR="$pkgdir/" install
+  cd "$srcdir/${pkgname%-git}"
+  make DESTDIR="$pkgdir/" install
   install -Dm644 COPYING "${pkgdir}/usr/share/licenses/${pkgname%-git}/LICENSE"
 }

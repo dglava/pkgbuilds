@@ -10,5 +10,5 @@ source=('toggle-touch')
 md5sums=('09a935492780f440d19ef7be54d24713')
 
 package() {
-	install -Dm 755 "${srcdir}/toggle-touch" "${pkgdir}/usr/bin/toggle-touch"
+  install -Dm 755 "${srcdir}/toggle-touch" "${pkgdir}/usr/bin/toggle-touch"
 }

@@ -25,7 +25,7 @@ md5sums=('405f81143202a506d7e183f1b59af838'
          'd2c92c16e834afffec6b77f63618eaf3')
 
 package() {
-	cd "$srcdir"
+  cd "$srcdir"
   install -d "$pkgdir/usr/lib/systemd/user"
   install -m 644 "$srcdir"/* "$pkgdir/usr/lib/systemd/user/"
 }

@@ -13,11 +13,11 @@ source=('git+https://github.com/mk-fg/python-pulse-control.git')
 md5sums=('SKIP')
 
 pkgver() {
-	cd "$srcdir/${pkgname%-git}"
-	printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+  cd "$srcdir/${pkgname%-git}"
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
 }
 
 package() {
-	cd "$srcdir/${pkgname%-git}"
+  cd "$srcdir/${pkgname%-git}"
   python setup.py install --root=$pkgdir
 }

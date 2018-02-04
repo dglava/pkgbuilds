@@ -17,6 +17,6 @@ pkgver() {
 }
 
 package() {
-	cd "${pkgname%-python3-git}/source"
+  cd "${pkgname%-python3-git}/source"
   python setup.py install --root="${pkgdir}"
 }

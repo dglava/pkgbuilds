@@ -16,6 +16,6 @@ pkgver() {
 }
 
 package() {
-	cd "${pkgname%-git}"
-	python2 setup.py install --root="$pkgdir"
+  cd "${pkgname%-git}"
+  python2 setup.py install --root="$pkgdir"
 }

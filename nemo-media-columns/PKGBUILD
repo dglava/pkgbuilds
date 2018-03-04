@@ -1,0 +1,32 @@
+pkgname=nemo-media-columns-git
+pkgver=1
+pkgrel=1
+pkgdesc="Additional columns for the list view in Nemo"
+arch=('any')
+url="https://github.com/linuxmint/nemo-extensions"
+license=('GPL2')
+depends=('nemo-python' 'mutagen' 'python2-exiv2' 'python2-pypdf'
+         'python2-pillow')
+conflicts=('nemo-media-columns')
+source=("git+https://github.com/linuxmint/nemo-extensions.git"
+        "pillow.patch"
+        "remove-kaa.patch"
+        "python.patch")
+md5sums=('SKIP'
+         '1b13b7098648e9c55ea9fa00eafa9485'
+         'b1fc04f128ca8ae09d8def669a0021d0'
+         '774563e506956cb5f2a4bd1971734a1a')
+
+prepare() {
+	cd "$srcdir/nemo-extensions/"
+  # makes it work with Pillow instead of PIL
+  patch -p1 < "$srcdir/pillow.patch"
+  # removes the kaa framework dependency (FLAC functionality lost)
+  patch -p1 < "$srcdir/remove-kaa.patch"
+  patch -p1 < "$srcdir/python.patch"
+}
+
+package() {
+	cd "$srcdir/nemo-extensions/${pkgname%-git}"
+  install -Dm755 "nemo-media-columns.py" "$pkgdir/usr/share/nemo-python/extensions/nemo-media-columns.py"
+}

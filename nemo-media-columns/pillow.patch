@@ -1,0 +1,11 @@
+--- nemo-extensions/nemo-media-columns/nemo-media-columns.py	2018-02-27 00:25:51.000000000 +0100
++++ "nemo-extensions (copy)/nemo-media-columns/nemo-media-columns.py"	2018-03-04 11:44:01.889978610 +0100
+@@ -33,7 +33,7 @@
+ # for reading videos. for future improvement, this can also read mp3!
+ import kaa.metadata
+ # for reading image dimensions
+-import Image
++from PIL import Image
+ # for reading pdf
+ try:
+     from pyPdf import PdfFileReader

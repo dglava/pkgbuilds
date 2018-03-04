@@ -1,0 +1,45 @@
+--- nemo-extensions/nemo-media-columns/nemo-media-columns.py	2018-02-27 00:25:51.000000000 +0100
++++ "nemo-extensions (copy)/nemo-media-columns/nemo-media-columns.py"	2018-03-04 11:38:27.800863662 +0100
+@@ -30,8 +30,6 @@
+ from mutagen.mp3 import MPEGInfo
+ # for exif support
+ import pyexiv2
+-# for reading videos. for future improvement, this can also read mp3!
+-import kaa.metadata
+ # for reading image dimensions
+ import Image
+ # for reading pdf
+@@ -206,33 +204,6 @@
+                 print e
+                 pass
+ 
+-        # video/flac handling
+-        elif file.is_mime_type('video/x-msvideo') | file.is_mime_type('video/mpeg') | file.is_mime_type('video/x-ms-wmv') | file.is_mime_type('video/mp4') | file.is_mime_type('audio/x-flac') | file.is_mime_type('video/x-flv') | file.is_mime_type('video/x-matroska') | file.is_mime_type('audio/x-wav'):
+-            try:
+-                metadata=kaa.metadata.parse(filename)
+-                try: info.length = "%02i:%02i:%02i" % ((int(metadata.length/3600)), (int(metadata.length/60%60)), (int(metadata.length%60)))
+-                except: pass
+-                try: info.pixeldimensions = str(metadata.video[0].width) + 'x'+ str(metadata.video[0].height)
+-                except: pass
+-                try: info.bitrate = str(round(metadata.audio[0].bitrate/1000))
+-                except: pass
+-                try: info.samplerate = str(int(metadata.audio[0].samplerate))+' Hz'
+-                except: pass
+-                try: info.title = metadata.title
+-                except: pass
+-                try: info.artist = metadata.artist
+-                except: pass
+-                try: info.genre = metadata.genre
+-                except: pass
+-                try: info.tracknumber = metadata.trackno
+-                except: pass
+-                try: info.date = metadata.userdate
+-                except: pass
+-                try: info.album = metadata.album
+-                except: pass
+-            except:
+-                pass
+-
+         # pdf handling
+         elif file.is_mime_type('application/pdf'):
+             try:

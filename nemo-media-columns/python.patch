@@ -1,8 +1,0 @@
---- nemo-extensions/nemo-media-columns/nemo-media-columns.py	2018-02-27 00:25:51.000000000 +0100
-+++ "nemo-extensions (copy)/nemo-media-columns/nemo-media-columns.py"	2018-03-04 11:45:49.934072284 +0100
-@@ -1,4 +1,4 @@
--#!/usr/bin/python
-+#!/usr/bin/python2
- 
- # change log:
- # geb666: original bsc.py, based on work by Giacomo Bordiga

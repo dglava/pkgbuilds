@@ -1,55 +1,67 @@
 pkgname=mpd-custom
 conflicts=("mpd")
-pkgver=0.20.15
+pkgver=0.21.3
 pkgrel=1
 pkgdesc='Flexible, powerful, server-side application for playing music'
 url='http://www.musicpd.org/'
 license=('GPL')
 arch=('i686' 'x86_64')
-depends=('libao' 'ffmpeg' 'libmodplug' 'audiofile' 'curl' 'faad2'
+depends=('ffmpeg' 'curl'
          'sqlite' 'wavpack' 'libid3tag' 'yajl' 'libmpdclient'
          'icu' 'libupnp' 'libsamplerate' 'libsoxr')
-makedepends=('boost' 'doxygen')
-source=("https://www.musicpd.org/download/mpd/0.20/${pkgname%-custom}-${pkgver}.tar.xz")
-sha1sums=('6acf4050ea07e5275e3e71fcaea971ada0727429')
-
+makedepends=('boost' 'doxygen' 'meson')
+source=("https://www.musicpd.org/download/mpd/${pkgver%.*}/${pkgname%-custom}-${pkgver}.tar.xz")
+sha1sums=('271cb468f2a1dd63b2daa2db19a03ad19b4ad425')
 
 build() {
   # remove ipv6 support; use ffmpeg for mp3 decoding instead of mad;
   # disable unused stuff like shout, mms, nfs and audio cd support
   cd "${srcdir}/${pkgname%-custom}-${pkgver}"
-  ./configure \
-    --prefix=/usr \
-    --sysconfdir=/etc \
-    --enable-libmpdclient \
-    --enable-pipe-output \
-    --enable-pulse \
-    --disable-sidplay \
-    --disable-smbclient \
-    --disable-ipv6 \
-    --disable-shout \
-    --disable-mms \
-    --disable-nfs \
-    --disable-mad \
-    --disable-cdio-paranoia \
-    --disable-iso9660 \
-    --disable-fifo \
-    --disable-roar \
-    --disable-documentation \
-    --disable-fluidsynth \
-    --disable-gme \
-    --disable-soundcloud \
-    --disable-oss \
-    --disable-openal \
-    --disable-wildmidi \
-    --disable-neighbor-plugins \
-    --disable-mpg123 \
-    --with-systemdsystemunitdir=/usr/lib/systemd/system \
-    --with-zeroconf=no
-  make
+  mkdir "bbuild" && cd "bbuild"
+  arch-meson .. \
+    -Dao=disabled \
+    -Dadplug=disabled \
+    -Daudiofile=disabled \
+    -Dcdio_paranoia=disabled \
+    -Dchromaprint=disabled \
+    -Ddocumentation=false \
+    -Dfluidsynth=disabled \
+    -Dgme=disabled \
+    -Dipv6=disabled \
+    -Diso9660=disabled \
+    -Djack=disabled \
+    -Dlibwrap=disabled \
+    -Dfifo=false \
+    -Dfaad=disabled \
+    -Dmad=disabled \
+    -Dmikmod=disabled \
+    -Dmms=disabled \
+    -Dmpg123=disabled \
+    -Dmpcdec=disabled \
+    -Dmodplug=disabled \
+    -Dneighbor=false \
+    -Dopenal=disabled \
+    -Doss=disabled \
+    -Dnfs=disabled \
+    -Dshine=disabled \
+    -Dshout=disabled \
+    -Dsidplay=disabled \
+    -Dsmbclient=disabled \
+    -Dsndfile=disabled \
+    -Dsndio=disabled \
+    -Dsolaris_output=disabled \
+    -Dsoundcloud=disabled \
+    -Dtidal=disabled \
+    -Dtwolame=disabled \
+    -Dwildmidi=disabled \
+    -Dzeroconf=disabled \
+    -Dzzip=disabled \
+
+    ninja
 }
 
 package() {
   cd "${srcdir}/${pkgname%-custom}-${pkgver}"
-  make DESTDIR="${pkgdir}" install
+  cd "bbuild"
+  DESTDIR="${pkgdir}" ninja install
 }

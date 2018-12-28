@@ -1,11 +1,11 @@
 pkgname=paper-icon-theme-git
-pkgver=v1.4.0.r5.gd3d6fbe1
+pkgver=v.1.5.0.r5.g8c7bf8d2
 pkgrel=1
 pkgdesc="Paper icon theme"
 arch=("any")
 url="https://github.com/snwh/paper-icon-theme"
 license=('CCPL:by-sa')
-makedepends=('git' 'automake')
+makedepends=('git' 'meson')
 source=('git+https://github.com/snwh/paper-icon-theme.git')
 md5sums=('SKIP')
 
@@ -16,12 +16,10 @@ pkgver() {
 
 build() {
   cd "$srcdir/${pkgname%-git}"
-  ./autogen.sh
-  ./configure --prefix=/usr
-  make
+  meson "build" --prefix=/usr
 }
 
 package() {
   cd "$srcdir/${pkgname%-git}"
-  make DESTDIR="$pkgdir/" install
+  DESTDIR="${pkgdir}" ninja -C "build" install
 }

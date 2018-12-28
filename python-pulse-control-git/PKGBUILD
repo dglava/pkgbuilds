@@ -1,5 +1,5 @@
 pkgname=python-pulse-control-git
-pkgver=r151.938d07f
+pkgver=r171.89419f0
 pkgrel=1
 pkgdesc="Python high-level interface and ctypes-based bindings for PulseAudio (libpulse)"
 arch=('any')

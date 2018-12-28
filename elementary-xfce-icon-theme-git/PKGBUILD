@@ -11,7 +11,8 @@ md5sums=('SKIP')
 
 pkgver() {
   cd "$srcdir/elementary-xfce"
-  git describe --long | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
+#  git describe --long | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
+  git describe --long --tags | sed "s/^${pkgname%-icon-theme-git}.//;s/\([^-]*-g\)/r\1/;s/-/./g"
 }
 
 package() {

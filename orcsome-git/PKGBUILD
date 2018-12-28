@@ -1,5 +1,5 @@
 pkgname=orcsome-git
-pkgver=0.6.r2.g1618297
+pkgver=0.6.r5.gcc237ae
 pkgrel=1
 pkgdesc="Scripting extension for NETWM compliant window managers"
 arch=('any')

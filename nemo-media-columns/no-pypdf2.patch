@@ -1,0 +1,31 @@
+--- nemo-extensions/nemo-media-columns/nemo-media-columns.py.old    2018-08-09 18:36:44.459618151 +0200
++++ nemo-extensions/nemo-media-columns/nemo-media-columns.py        2018-08-09 18:36:37.149516215 +0200
+@@ -34,8 +34,6 @@
+ from pymediainfo import MediaInfo
+ # for reading image dimensions
+ import PIL.Image
+-# for reading pdf
+-from PyPDF2 import PdfFileReader
+
+ import signal
+ signal.signal(signal.SIGINT, signal.SIG_DFL)
+@@ -260,19 +258,6 @@
+             except Exception as e:
+                 pass
+
+-        # pdf handling
+-        elif file.is_mime_type('application/pdf'):
+-            try:
+-                f = open(filename, "rb")
+-                pdf = PdfFileReader(f)
+-                try: info.title = pdf.getDocumentInfo().title
+-                except: pass
+-                try: info.artist = pdf.getDocumentInfo().author
+-                except: pass
+-                f.close()
+-            except:
+-                pass
+-
+         self.set_file_attributes(file, info)
+
+         del info

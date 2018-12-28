@@ -5,25 +5,18 @@ pkgdesc="Additional columns for the list view in Nemo"
 arch=('any')
 url="https://github.com/linuxmint/nemo-extensions"
 license=('GPL2')
-depends=('nemo-python' 'mutagen' 'python2-exiv2' 'python2-pypdf'
-         'python2-pillow')
+depends=('nemo-python' 'mutagen' 'python-mutagen' 'python-pymediainfo'
+         'python-pillow')
 conflicts=('nemo-media-columns')
 source=("git+https://github.com/linuxmint/nemo-extensions.git"
-        "pillow.patch"
-        "remove-kaa.patch"
-        "python.patch")
+        "no-pypdf2.patch")
 md5sums=('SKIP'
-         '1b13b7098648e9c55ea9fa00eafa9485'
-         'b1fc04f128ca8ae09d8def669a0021d0'
-         '774563e506956cb5f2a4bd1971734a1a')
+         'ede2c0f32315f35f283d7a77f0cdc343')
 
 prepare() {
 	cd "$srcdir/nemo-extensions/"
-  # makes it work with Pillow instead of PIL
-  patch -p1 < "$srcdir/pillow.patch"
-  # removes the kaa framework dependency (FLAC functionality lost)
-  patch -p1 < "$srcdir/remove-kaa.patch"
-  patch -p1 < "$srcdir/python.patch"
+  # remove PDF feature; Arch repository doesn't have python-pypdf2;
+  patch -p1 < "$srcdir/no-pypdf2.patch"
 }
 
 package() {

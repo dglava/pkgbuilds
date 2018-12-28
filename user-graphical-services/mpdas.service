@@ -1,7 +1,7 @@
 [Unit]
 Description=MPD scrobbler
-Requires=mpd.service
-After=mpd.service
+Requires=mpd-custom.service
+After=mpd-custom.service
 
 [Service]
 Type=simple

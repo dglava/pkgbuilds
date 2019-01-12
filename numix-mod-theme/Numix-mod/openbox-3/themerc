@@ -128,9 +128,9 @@ menu.title.text.font:shadow=n
 
 
 # Everything else
-border.width: 1
-padding.width: 8
-padding.height: 4
+border.width: 4
+padding.width: 4
+padding.height: 2
 window.handle.width: 0
 window.client.padding.width: 0
 window.label.text.justify: left

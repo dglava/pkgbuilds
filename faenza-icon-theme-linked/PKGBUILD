@@ -1,18 +1,18 @@
-pkgname=faenza-icon-theme
-pkgver=1.4
+pkgname=faenza-icon-theme-linked
+pkgver=1.3.1
 pkgrel=1
-pkgdesc="Faenza icon theme"
+pkgdesc="Faenza icon theme - with symlink fixes"
 arch=('any')
 url="https://www.gnome-look.org/content/show.php/Faenza?content=128143"
 license=('GPL')
 options=(!strip)
-source=("https://launchpad.net/~tiheum/+archive/ubuntu/equinox/+sourcefiles/faenza-icon-theme/1.3.1/faenza-icon-theme_1.3.1.tar.gz")
+source=("https://launchpad.net/~tiheum/+archive/ubuntu/equinox/+sourcefiles/faenza-icon-theme/${pkgver}/faenza-icon-theme_${pkgver}.tar.gz")
 sha1sums=('9acfb7931482b4202d0e7ce158ccf030f7fc5d7b')
 
 package() {
   mkdir -p ${pkgdir}/usr/share/icons/
 
-  cd ${srcdir}/${pkgname}-1.3
+  cd ${srcdir}/${pkgname%-linked}-${pkgver%.1}
   cp -r Faenza* ${pkgdir}/usr/share/icons/
 
   # fix https://gitlab.gnome.org/GNOME/glib/issues/1529

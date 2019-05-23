@@ -1,0 +1,32 @@
+pkgname=zukitre-gtk-theme-git
+pkgver=r256.5cc9f1c
+pkgrel=1
+pkgdesc="Zukitre GTK themes"
+arch=('any')
+url="https://github.com/lassekongo83/zuki-themes.git"
+license=('GPL3')
+makedepends=('git')
+source=('git+https://github.com/lassekongo83/zuki-themes.git')
+md5sums=('SKIP')
+
+pkgver() {
+  cd "$srcdir/zuki-themes"
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+build() {
+  cd "$srcdir/zuki-themes"
+  mkdir build
+  arch-meson build
+}
+
+package() {
+  cd "$srcdir/zuki-themes"
+  DESTDIR="$pkgdir" ninja -C build install
+  # remove unneeded things
+  rm -rf "${pkgdir}/usr/share/themes/Zuki-shell"
+  rm -rf "${pkgdir}/usr/share/themes/Zukitwo"
+  rm -rf "${pkgdir}/usr/share/themes/Zukitwo-dark"
+  rm -rf "${pkgdir}/usr/share/themes/Zukitre/xfwm4"
+  rm -rf "${pkgdir}/usr/share/themes/Zukitre-dark/xfwm4"
+}

@@ -1,0 +1,124 @@
+diff '--color=auto' -u -r --text zuki-themes.orig/gtk/src/Zukitre/gtk-2.0/assets.svg zuki-themes.new/gtk/src/Zukitre/gtk-2.0/assets.svg
+--- zuki-themes.orig/gtk/src/Zukitre/gtk-2.0/assets.svg	2019-06-03 19:22:51.000000000 +0200
++++ zuki-themes.new/gtk/src/Zukitre/gtk-2.0/assets.svg	2019-06-04 22:14:50.940552416 +0200
+@@ -161,7 +161,7 @@
+          y="904.36218"
+          ry="1.9999774" />
+       <rect
+-         style="opacity:1;fill:#4a79c7;fill-opacity:1;stroke:none;stroke-width:0.93332726;stroke-opacity:1"
++         style="opacity:1;fill:#2c2c2c;fill-opacity:1;stroke:none;stroke-width:0.93332726;stroke-opacity:1"
+          id="rect4819-6"
+          width="14"
+          height="14"
+@@ -226,7 +226,7 @@
+          id="rect2065"
+          style="opacity:1;fill:#000000;fill-opacity:0.0627451;stroke:none;stroke-width:1.14286375;stroke-opacity:1" />
+       <rect
+-         style="opacity:1;fill:#4a79c7;fill-opacity:1;stroke:none;stroke-width:1.16666412;stroke-opacity:1"
++         style="opacity:1;fill:#2c2c2c;fill-opacity:1;stroke:none;stroke-width:1.16666412;stroke-opacity:1"
+          id="rect2067"
+          width="14.000088"
+          height="13.999858"
+@@ -260,7 +260,7 @@
+          y="964.36218"
+          ry="0" />
+       <path
+-         style="color:#bebebe;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:'Andale Mono';text-indent:0pt;text-align:start;text-decoration:none;text-decoration-line:none;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;text-anchor:start;display:inline;overflow:visible;visibility:visible;fill:#4a79c7;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.79172564;marker:none"
++         style="color:#bebebe;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:medium;line-height:normal;font-family:'Andale Mono';text-indent:0pt;text-align:start;text-decoration:none;text-decoration-line:none;letter-spacing:normal;word-spacing:normal;text-transform:none;direction:ltr;text-anchor:start;display:inline;overflow:visible;visibility:visible;fill:#2c2c2c;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.79172564;marker:none"
+          sodipodi:nodetypes="csssc"
+          id="path9555-1"
+          d="m 12,967.36216 c -1.65555,0 -3,1.34444 -3,3 0,1.65555 1.34445,3 3,3 1.65555,0 3,-1.34445 3,-3 0,-1.65556 -1.34445,-3 -3,-3 z"
+@@ -336,7 +336,7 @@
+          height="13.999855"
+          width="14.000099"
+          id="rect2017"
+-         style="opacity:1;fill:#4a79c7;fill-opacity:1;stroke:none;stroke-opacity:1" />
++         style="opacity:1;fill:#2c2c2c;fill-opacity:1;stroke:none;stroke-opacity:1" />
+       <rect
+          ry="0"
+          y="922.36218"
+@@ -362,7 +362,7 @@
+          id="rect4972-1"
+          style="opacity:1;fill:none;fill-opacity:1;stroke:none;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+       <path
+-         style="fill:#4a79c7;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
++         style="fill:#2c2c2c;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+          d="m 6.9999997,930.36216 v -1 h 1 l 3.0000003,3 4.999999,-6 h 1 v 1 l -5.999999,7 -1,-1 z"
+          id="path4170"
+          inkscape:connector-curvature="0"
+@@ -386,7 +386,7 @@
+          height="13.999855"
+          width="14.000099"
+          id="rect2025"
+-         style="opacity:1;fill:#4a79c7;fill-opacity:1;stroke:none;stroke-opacity:1" />
++         style="opacity:1;fill:#2c2c2c;fill-opacity:1;stroke:none;stroke-opacity:1" />
+       <rect
+          ry="0"
+          y="922.36218"
+@@ -410,7 +410,7 @@
+          height="2"
+          width="8"
+          id="rect2625"
+-         style="fill:#4a79c7;fill-opacity:1;stroke:none;stroke-opacity:1" />
++         style="fill:#2c2c2c;fill-opacity:1;stroke:none;stroke-opacity:1" />
+     </g>
+     <g
+        id="checkbox-mixed-insensitive"
+@@ -462,7 +462,7 @@
+          id="rect2073"
+          style="opacity:1;fill:#000000;fill-opacity:0.0627451;stroke:none;stroke-width:1.14286375;stroke-opacity:1" />
+       <rect
+-         style="opacity:1;fill:#4a79c7;fill-opacity:1;stroke:none;stroke-width:1.16666412;stroke-opacity:1"
++         style="opacity:1;fill:#2c2c2c;fill-opacity:1;stroke:none;stroke-width:1.16666412;stroke-opacity:1"
+          id="rect2075"
+          width="14.000088"
+          height="13.999858"
+@@ -488,7 +488,7 @@
+          id="rect2079"
+          style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.99999881;stroke-opacity:1" />
+       <rect
+-         style="fill:#4a79c7;fill-opacity:1;stroke:none;stroke-opacity:1"
++         style="fill:#2c2c2c;fill-opacity:1;stroke:none;stroke-opacity:1"
+          id="rect2688"
+          width="8"
+          height="2"
+@@ -782,7 +782,7 @@
+          id="rect4831-9"
+          style="opacity:1;fill:#000000;fill-opacity:0.0627451;stroke:none;stroke-width:1.14286399;stroke-opacity:1" />
+       <rect
+-         style="opacity:1;fill:#4a79c7;fill-opacity:1;stroke:none;stroke-width:1.16666436;stroke-opacity:1"
++         style="opacity:1;fill:#2c2c2c;fill-opacity:1;stroke:none;stroke-width:1.16666436;stroke-opacity:1"
+          id="rect4833-2"
+          width="14.000093"
+          height="13.999858"
+diff '--color=auto' -u -r --text zuki-themes.orig/gtk/src/Zukitre/gtk-2.0/gtkrc zuki-themes.new/gtk/src/Zukitre/gtk-2.0/gtkrc
+--- zuki-themes.orig/gtk/src/Zukitre/gtk-2.0/gtkrc	2019-06-03 19:22:51.000000000 +0200
++++ zuki-themes.new/gtk/src/Zukitre/gtk-2.0/gtkrc	2019-06-04 22:22:55.143358834 +0200
+@@ -12,7 +12,7 @@
+ gtk-color-scheme = "bg_color_dark:#2b2e30\ntext_color_dark:#f6f6f7"
+ 
+ gtk-icon-sizes     = "panel-applications-menu=24,24:panel-menu=24,24:panel=16,16:gtk-button=16,16"
+-gtk-button-images  = 1 # Disables icons for buttons with text
++gtk-button-images  = 0 # Disables icons for buttons with text
+ gtk-toolbar-style  = 0 # Disables text in toolbar
+ gtk-auto-mnemonics = 1 # Disables lines under menu items
+ 
+diff '--color=auto' -u -r --text zuki-themes.orig/gtk/src/Zukitre/gtk-3.0/_drawing.scss zuki-themes.new/gtk/src/Zukitre/gtk-3.0/_drawing.scss
+--- zuki-themes.orig/gtk/src/Zukitre/gtk-3.0/_drawing.scss	2019-06-04 22:41:30.177498067 +0200
++++ zuki-themes.new/gtk/src/Zukitre/gtk-3.0/_drawing.scss	2019-06-05 02:40:12.836635702 +0200
+@@ -397,12 +397,12 @@
+   }
+   @else if $t==hover {
+     color: $tc;
+-    border: 1px solid $selected_bg_color;
++    border: 1px solid $fg_color;
+   }
+   @else if $t==checked {
+-    color: if($variant == 'light', $selected_bg_color, $selected_fg_color);
++    color: if($variant == 'light', $fg_color, $selected_fg_color);
+     background-color: if($variant == 'light', $base_color, $selected_bg_color);
+-    border: 1px solid $selected_bg_color;
++    border: 1px solid $fg_color;
+     &:backdrop { color: if($variant == 'light', $selected_bg_color, $selected_fg_color); }
+   }
+   @else if $t==menuitem-checked {

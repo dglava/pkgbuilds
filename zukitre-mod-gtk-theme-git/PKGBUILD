@@ -1,13 +1,24 @@
-pkgname=zukitre-gtk-theme-git
-pkgver=r256.5cc9f1c
+pkgname=zukitre-mod-gtk-theme-git
+pkgver=1
 pkgrel=1
-pkgdesc="Zukitre GTK themes"
+pkgdesc="Zukitre GTK theme - dark radio/checkbuttons"
 arch=('any')
-url="https://github.com/lassekongo83/zuki-themes.git"
+url="https://github.com/dglava/pkgbuilds/tree/master/cheser-icon-theme-git"
 license=('GPL3')
 makedepends=('git')
-source=('git+https://github.com/lassekongo83/zuki-themes.git')
-md5sums=('SKIP')
+source=('git+https://github.com/lassekongo83/zuki-themes.git'
+        'colors.patch')
+md5sums=('SKIP'
+         '70f5d20fedb7a832892193d397118c9a')
+
+prepare() {
+  cd "$srcdir/zuki-themes"
+  # dark checkboxes/radiobuttons
+  patch -p1 < $srcdir/colors.patch
+  cd "gtk/src/Zukitre/gtk-2.0/"
+  rm "assets/"*
+  bash "render-assets.sh"
+}
 
 pkgver() {
   cd "$srcdir/zuki-themes"
@@ -28,5 +39,5 @@ package() {
   rm -rf "${pkgdir}/usr/share/themes/Zukitwo"
   rm -rf "${pkgdir}/usr/share/themes/Zukitwo-dark"
   rm -rf "${pkgdir}/usr/share/themes/Zukitre/xfwm4"
-  rm -rf "${pkgdir}/usr/share/themes/Zukitre-dark/xfwm4"
+  rm -rf "${pkgdir}/usr/share/themes/Zukitre-dark"
 }

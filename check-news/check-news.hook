@@ -1,0 +1,11 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Package
+Target = *
+[Action]
+Description = Check for news about updates
+Depends = curl
+When = PreTransaction
+AbortOnFail = true
+Exec = /usr/bin/update-news

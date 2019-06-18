@@ -1,0 +1,17 @@
+#!/usr/bin/bash
+
+arch_link="https://www.archlinux.org/news/"
+hash_file="/var/lib/pacman/news.hash"
+news="News available, visit $arch_link"
+
+last_modified=$(curl -Is https://www.archlinux.org/feeds/news/ | grep last-modified)
+last_mod_hash=$(echo -n $last_modified | sha1sum | cut -d " " -f 1)
+
+if [[ ! -e $hash_file ]]; then
+  echo $last_mod_hash > $hash_file
+  echo $news
+  exit 0
+elif [[ $last_mod_hash != $( < ${hash_file}) ]]; then
+  echo $news
+  exit 1
+fi

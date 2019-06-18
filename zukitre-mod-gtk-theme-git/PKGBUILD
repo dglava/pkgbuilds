@@ -1,5 +1,5 @@
 pkgname=zukitre-mod-gtk-theme-git
-pkgver=1
+pkgver=r259.edabe0e
 pkgrel=1
 pkgdesc="Zukitre GTK theme - dark radio/checkbuttons"
 arch=('any')

@@ -1,0 +1,16 @@
+pkgname=check-news-hook
+pkgver=1
+pkgrel=1
+pkgdesc="Checks ArchLinux news before updating packages"
+arch=('any')
+url="http://dglava.github.io"
+license=('GPL')
+depends=('curl')
+source=('update-news' 'check-news.hook')
+sha1sums=('7d04c58bfad6a8e06e5110d82836f62aef7bbc2f'
+          'dbf04867f9b5c42e6b9097c1e11460187b9175c1')
+
+package() {
+  install -Dm 755 "${srcdir}/update-news" "${pkgdir}/usr/bin/update-news"
+  install -Dm 755 "${srcdir}/check-news.hook" "${pkgdir}/usr/share/libalpm/hooks/check-news.hook"
+}

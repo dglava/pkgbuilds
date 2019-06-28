@@ -1,7 +1,7 @@
 pkgname=zukitre-mod-gtk-theme-git
-pkgver=r259.edabe0e
+pkgver=r261.21fe181
 pkgrel=1
-pkgdesc="Zukitre GTK theme - dark radio/checkbuttons"
+pkgdesc="Zukitre GTK theme with slight modifications"
 arch=('any')
 url="https://github.com/dglava/pkgbuilds/tree/master/zukitre-mod-gtk-theme-git"
 license=('GPL3')

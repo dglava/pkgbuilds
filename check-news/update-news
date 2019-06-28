@@ -12,6 +12,7 @@ if [[ ! -e $hash_file ]]; then
   echo $news
   exit 0
 elif [[ $last_mod_hash != $( < ${hash_file}) ]]; then
+  echo $last_mod_hash > $hash_file
   echo $news
   exit 1
 fi

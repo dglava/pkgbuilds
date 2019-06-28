@@ -7,10 +7,10 @@ url="http://dglava.github.io"
 license=('GPL')
 depends=('curl')
 source=('update-news' 'check-news.hook')
-sha1sums=('7d04c58bfad6a8e06e5110d82836f62aef7bbc2f'
+sha1sums=('9222ea481bb12409e122c7946cd4f32e3821018d'
           'dbf04867f9b5c42e6b9097c1e11460187b9175c1')
 
 package() {
   install -Dm 755 "${srcdir}/update-news" "${pkgdir}/usr/bin/update-news"
-  install -Dm 755 "${srcdir}/check-news.hook" "${pkgdir}/usr/share/libalpm/hooks/check-news.hook"
+  install -Dm 644 "${srcdir}/check-news.hook" "${pkgdir}/usr/share/libalpm/hooks/check-news.hook"
 }

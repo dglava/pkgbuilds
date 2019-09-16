@@ -1,0 +1,9 @@
+[Unit]
+Description=Wallpaper setter
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/nitrogen --restore
+
+[Install]
+WantedBy=user-graphical.target

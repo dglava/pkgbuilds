@@ -10,15 +10,17 @@ source=("cbatticon.service"
         "firefox-dpms.service"
         "mpdas.service"
         "mpd-custom.service"
+        "nitrogen.service"
         "orcsome.service"
         "tint2.service"
         "user-graphical.target"
         "volumeicon.service")
-md5sums=('405f81143202a506d7e183f1b59af838'
+md5sums=('413f178c75433818ea0a65a30c555fab'
          'ab49524aa991a7b8254169c6ee931ff4'
          '4c9af19f5f924b58d992019925408283'
          '6c426716f334a7bbd7b933187ef20e13'
          'ba87837b8c5432c10dd09941f93ab9f6'
+         'c8996c98cd06d58354a60ea5e991436e'
          'af4183ce2e9214db424abe28b634f0e4'
          '6256080fae896de81298f741681cb861'
          '6c9051cad2af57064b731071995472ae'

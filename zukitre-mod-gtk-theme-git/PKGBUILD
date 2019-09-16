@@ -1,5 +1,5 @@
 pkgname=zukitre-mod-gtk-theme-git
-pkgver=r261.21fe181
+pkgver=r266.2808f03
 pkgrel=1
 pkgdesc="Zukitre GTK theme with slight modifications"
 arch=('any')

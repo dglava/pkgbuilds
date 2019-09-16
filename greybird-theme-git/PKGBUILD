@@ -1,5 +1,5 @@
 pkgname=greybird-theme-git
-pkgver=v3.22.10.r3.gc0b8881
+pkgver=v3.22.10.r4.g50e9273
 pkgrel=1
 pkgdesc="Greybird GTK2/3 and Openbox themes"
 arch=('any')

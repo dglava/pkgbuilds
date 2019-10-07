@@ -6,13 +6,13 @@ arch=('any')
 url="https://github.com/dglava/pkgbuilds"
 license=('GPL')
 depends=('mpv')
-source=("mpv_single" "mpv-single.desktop")
-md5sums=('0abc7093b00916f8c58ecd64459b6a2f'
-         'b301790b6879141002602e7c5ae559f3')
+source=("mpv-single" "mpv-single.desktop")
+sha1sums=('aea45597ce1581c08531d6621a7cbd174a519b4e'
+          'ebbecb348e261cce03a8a01934e8d3816b3463e4')
 
 package() {
   install -d "$pkgdir/usr/bin/"
   install -d "$pkgdir/usr/share/applications"
-  install -m 755 -D mpv_single "$pkgdir/usr/bin/"
+  install -m 755 -D mpv-single "$pkgdir/usr/bin/"
   install -m 644 -D mpv-single.desktop "$pkgdir/usr/share/applications"
 }

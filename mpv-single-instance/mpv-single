@@ -1,0 +1,4 @@
+#!/bin/bash
+
+pkill -x mpv
+mpv --player-operation-mode=pseudo-gui "$@"

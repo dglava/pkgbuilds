@@ -2,8 +2,9 @@
 Description=Wallpaper setter
 
 [Service]
-Type=simple
+Type=oneshot
 ExecStart=/usr/bin/nitrogen --restore
+RemainAfterExit=True
 
 [Install]
 WantedBy=user-graphical.target

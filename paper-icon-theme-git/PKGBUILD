@@ -1,5 +1,5 @@
 pkgname=paper-icon-theme-git
-pkgver=v.1.5.0.r5.g8c7bf8d2
+pkgver=v.1.5.0.r27.gab51c46f
 pkgrel=1
 pkgdesc="Paper icon theme"
 arch=("any")

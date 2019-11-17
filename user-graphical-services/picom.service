@@ -1,0 +1,10 @@
+[Unit]
+Description=Desktop compositor
+
+[Service]
+Type=simple
+Environment=CONFIG="/home/dino/.config/picom/picom.conf"
+ExecStart=/usr/bin/picom --config ${CONFIG}
+
+[Install]
+WantedBy=user-graphical.target

@@ -1,5 +1,5 @@
 pkgname=zukitre-mod-gtk-theme-git
-pkgver=r271.40c3c01
+pkgver=r279.984c908
 pkgrel=1
 pkgdesc="Zukitre GTK theme with slight modifications"
 arch=('any')
@@ -34,6 +34,8 @@ build() {
 package() {
   cd "$srcdir/zuki-themes"
   DESTDIR="$pkgdir" ninja -C build install
+  # rename theme
+  mv "${pkgdir}/usr/share/themes/Zukitre" "${pkgdir}/usr/share/themes/Zukitre-mod"
   # remove unneeded things
   rm -rf "${pkgdir}/usr/share/themes/Zuki-shell"
   rm -rf "${pkgdir}/usr/share/themes/Zukitwo"

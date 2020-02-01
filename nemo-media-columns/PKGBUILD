@@ -5,7 +5,7 @@ pkgdesc="Additional columns for the list view in Nemo"
 arch=('any')
 url="https://github.com/linuxmint/nemo-extensions"
 license=('GPL2')
-depends=('nemo-python' 'mutagen' 'python-mutagen' 'python-pymediainfo'
+depends=('nemo-python' 'python-mutagen' 'python-pymediainfo'
          'python-pillow')
 conflicts=('nemo-media-columns')
 source=("git+https://github.com/linuxmint/nemo-extensions.git"

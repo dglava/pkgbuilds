@@ -1,6 +1,6 @@
 pkgname=mpd-custom
 conflicts=("mpd")
-pkgver=0.21.19
+pkgver=0.21.20
 pkgrel=1
 pkgdesc='Flexible, powerful, server-side application for playing music'
 url='http://www.musicpd.org/'

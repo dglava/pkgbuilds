@@ -14,12 +14,12 @@ md5sums=('SKIP'
          'ede2c0f32315f35f283d7a77f0cdc343')
 
 prepare() {
-	cd "$srcdir/nemo-extensions/"
+  cd "$srcdir/nemo-extensions/"
   # remove PDF feature; Arch repository doesn't have python-pypdf2;
   patch -p1 < "$srcdir/no-pypdf2.patch"
 }
 
 package() {
-	cd "$srcdir/nemo-extensions/${pkgname%-git}"
+  cd "$srcdir/nemo-extensions/${pkgname%-git}"
   install -Dm755 "nemo-media-columns.py" "$pkgdir/usr/share/nemo-python/extensions/nemo-media-columns.py"
 }

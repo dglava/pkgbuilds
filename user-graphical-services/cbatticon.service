@@ -7,3 +7,5 @@ ExecStart=/usr/bin/cbatticon -i symbolic -l 10 -r 2
 
 [Install]
 WantedBy=user-graphical.target
+Requires=tint2.service
+After=tint2.service

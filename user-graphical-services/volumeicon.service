@@ -7,3 +7,5 @@ ExecStart=/usr/bin/volumeicon
 
 [Install]
 WantedBy=user-graphical.target
+Requires=tint2.service
+After=tint2.service

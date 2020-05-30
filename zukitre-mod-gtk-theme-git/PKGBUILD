@@ -1,5 +1,5 @@
 pkgname=zukitre-mod-gtk-theme-git
-pkgver=r281.a13b8c9
+pkgver=r286.3545ad8
 pkgrel=1
 pkgdesc="Zukitre GTK theme with slight modifications"
 arch=('any')
@@ -9,7 +9,7 @@ makedepends=('git' 'meson')
 source=('git+https://github.com/lassekongo83/zuki-themes.git'
         'colors.patch')
 md5sums=('SKIP'
-         '70f5d20fedb7a832892193d397118c9a')
+         '0e365cbfff3447743b0acca0702f1c0e')
 
 prepare() {
   cd "$srcdir/zuki-themes"

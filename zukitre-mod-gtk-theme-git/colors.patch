@@ -1,6 +1,24 @@
-diff '--color=auto' -u -r --text zuki-themes.orig/gtk/src/Zukitre/gtk-2.0/assets.svg zuki-themes.new/gtk/src/Zukitre/gtk-2.0/assets.svg
---- zuki-themes.orig/gtk/src/Zukitre/gtk-2.0/assets.svg	2019-06-03 19:22:51.000000000 +0200
-+++ zuki-themes.new/gtk/src/Zukitre/gtk-2.0/assets.svg	2019-06-04 22:14:50.940552416 +0200
+diff '--color=auto' -u -r --text zuki-themes.old/gtk/src/Zukitre/gtk-2.0/assets.svg zuki-themes.new/gtk/src/Zukitre/gtk-2.0/assets.svg
+--- zuki-themes.old/gtk/src/Zukitre/gtk-2.0/assets.svg	2020-05-29 10:57:14.000000000 +0200
++++ zuki-themes.new/gtk/src/Zukitre/gtk-2.0/assets.svg	2020-05-30 11:08:31.765322258 +0200
+@@ -106,7 +106,7 @@
+        id="base-color"
+        style="opacity:1;fill:#f7f7f7;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.5098038" />
+     <rect
+-       style="opacity:1;fill:#4a79c7;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.5098038"
++       style="opacity:1;fill:#2c2c2c;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:0.5098038"
+        id="selected-color"
+        width="1"
+        height="1"
+@@ -147,7 +147,7 @@
+          height="11.999977"
+          width="12"
+          id="rect1995"
+-         style="opacity:1;fill:#f8ffff;fill-opacity:1;stroke:none;stroke-width:0.83333319;stroke-opacity:1" />
++         style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.83333319;stroke-opacity:1" />
+     </g>
+     <g
+        id="checkbox-unchecked-hover"
 @@ -161,7 +161,7 @@
           y="904.36218"
           ry="1.9999774" />
@@ -37,6 +55,15 @@ diff '--color=auto' -u -r --text zuki-themes.orig/gtk/src/Zukitre/gtk-2.0/assets
        <rect
           ry="0"
           y="922.36218"
+@@ -346,7 +346,7 @@
+          id="rect2019"
+          style="opacity:1;fill:none;fill-opacity:1;stroke:none;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+       <rect
+-         style="opacity:1;fill:#f8ffff;fill-opacity:1;stroke:none;stroke-width:0.83333319;stroke-opacity:1"
++         style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.83333319;stroke-opacity:1"
+          id="rect2021"
+          width="12"
+          height="11.999977"
 @@ -362,7 +362,7 @@
           id="rect4972-1"
           style="opacity:1;fill:none;fill-opacity:1;stroke:none;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
@@ -55,6 +82,15 @@ diff '--color=auto' -u -r --text zuki-themes.orig/gtk/src/Zukitre/gtk-2.0/assets
        <rect
           ry="0"
           y="922.36218"
+@@ -396,7 +396,7 @@
+          id="rect2027"
+          style="opacity:1;fill:none;fill-opacity:1;stroke:none;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+       <rect
+-         style="opacity:1;fill:#f8ffff;fill-opacity:1;stroke:none;stroke-width:0.83333319;stroke-opacity:1"
++         style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.83333319;stroke-opacity:1"
+          id="rect2029"
+          width="12"
+          height="11.999977"
 @@ -410,7 +410,7 @@
           height="2"
           width="8"
@@ -91,9 +127,9 @@ diff '--color=auto' -u -r --text zuki-themes.orig/gtk/src/Zukitre/gtk-2.0/assets
           id="rect4833-2"
           width="14.000093"
           height="13.999858"
-diff '--color=auto' -u -r --text zuki-themes.orig/gtk/src/Zukitre/gtk-2.0/gtkrc zuki-themes.new/gtk/src/Zukitre/gtk-2.0/gtkrc
---- zuki-themes.orig/gtk/src/Zukitre/gtk-2.0/gtkrc	2019-06-03 19:22:51.000000000 +0200
-+++ zuki-themes.new/gtk/src/Zukitre/gtk-2.0/gtkrc	2019-06-04 22:22:55.143358834 +0200
+diff '--color=auto' -u -r --text zuki-themes.old/gtk/src/Zukitre/gtk-2.0/gtkrc zuki-themes.new/gtk/src/Zukitre/gtk-2.0/gtkrc
+--- zuki-themes.old/gtk/src/Zukitre/gtk-2.0/gtkrc	2020-05-29 10:57:14.000000000 +0200
++++ zuki-themes.new/gtk/src/Zukitre/gtk-2.0/gtkrc	2020-05-30 12:02:48.577403190 +0200
 @@ -12,7 +12,7 @@
  gtk-color-scheme = "bg_color_dark:#2b2e30\ntext_color_dark:#f6f6f7"
  
@@ -103,22 +139,82 @@ diff '--color=auto' -u -r --text zuki-themes.orig/gtk/src/Zukitre/gtk-2.0/gtkrc 
  gtk-toolbar-style  = 0 # Disables text in toolbar
  gtk-auto-mnemonics = 1 # Disables lines under menu items
  
-diff '--color=auto' -u -r --text zuki-themes.orig/gtk/src/Zukitre/gtk-3.0/_drawing.scss zuki-themes.new/gtk/src/Zukitre/gtk-3.0/_drawing.scss
---- zuki-themes.orig/gtk/src/Zukitre/gtk-3.0/_drawing.scss	2019-06-04 22:41:30.177498067 +0200
-+++ zuki-themes.new/gtk/src/Zukitre/gtk-3.0/_drawing.scss	2019-06-05 02:40:12.836635702 +0200
-@@ -397,12 +397,12 @@
+diff '--color=auto' -u -r --text zuki-themes.old/gtk/src/Zukitre/gtk-2.0/render-assets.sh zuki-themes.new/gtk/src/Zukitre/gtk-2.0/render-assets.sh
+--- zuki-themes.old/gtk/src/Zukitre/gtk-2.0/render-assets.sh	2020-05-29 10:57:14.000000000 +0200
++++ zuki-themes.new/gtk/src/Zukitre/gtk-2.0/render-assets.sh	2020-05-30 11:21:04.603677226 +0200
+@@ -8,7 +8,7 @@
+ INDEX="assets.txt"
+ 
+ for i in `cat $INDEX`
+-do 
++do
+ if [ -f $ASSETS_DIR/$i.png ]; then
+     echo $ASSETS_DIR/$i.png exists.
+ else
+@@ -16,8 +16,8 @@
+     echo Rendering $ASSETS_DIR/$i.png
+     $INKSCAPE --export-id=$i \
+               --export-id-only \
+-              --export-png=$ASSETS_DIR/$i.png $SRC_FILE >/dev/null #\
+-    # && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i.png 
++              --export-filename=$ASSETS_DIR/$i.png $SRC_FILE >/dev/null #\
++    # && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i.png
+ fi
+ done
+ exit 0
+diff '--color=auto' -u -r --text zuki-themes.old/gtk/src/Zukitre/gtk-3.0/_drawing.scss zuki-themes.new/gtk/src/Zukitre/gtk-3.0/_drawing.scss
+--- zuki-themes.old/gtk/src/Zukitre/gtk-3.0/_drawing.scss	2020-05-29 10:57:14.000000000 +0200
++++ zuki-themes.new/gtk/src/Zukitre/gtk-3.0/_drawing.scss	2020-05-30 12:00:57.089286971 +0200
+@@ -641,14 +641,14 @@
+ 
+   @if $t==normal  {
+     background-clip: if($checked, border-box, padding-box);
+-    background-image: linear-gradient(to bottom, $c, $c);
+-    border-color: $_border_color;
++    background-color: $selected_fg_color;
++    border-color: $fg_color;
+     box-shadow: 0 1px transparentize(black, 0.95);
+-    color: $tc;
++    color: $fg_color;
    }
-   @else if $t==hover {
-     color: $tc;
--    border: 1px solid $selected_bg_color;
-+    border: 1px solid $fg_color;
+ 
+   @if $t==hover {
+-    background-image: if($c == white, image(darken($c, 5%)), linear-gradient(to bottom, lighten($c, 6%), lighten($c, 6%)));
++    background-color: $selected_fg_color;
    }
-   @else if $t==checked {
--    color: if($variant == 'light', $selected_bg_color, $selected_fg_color);
-+    color: if($variant == 'light', $fg_color, $selected_fg_color);
-     background-color: if($variant == 'light', $base_color, $selected_bg_color);
--    border: 1px solid $selected_bg_color;
-+    border: 1px solid $fg_color;
-     &:backdrop { color: if($variant == 'light', $selected_bg_color, $selected_fg_color); }
-   }
-   @else if $t==menuitem-checked {
+ 
+   @if $t==active {
+diff '--color=auto' -u -r --text zuki-themes.old/gtk/src/Zukitre/gtk-3.0/render-assets.sh zuki-themes.new/gtk/src/Zukitre/gtk-3.0/render-assets.sh
+--- zuki-themes.old/gtk/src/Zukitre/gtk-3.0/render-assets.sh	2020-05-29 10:57:14.000000000 +0200
++++ zuki-themes.new/gtk/src/Zukitre/gtk-3.0/render-assets.sh	2020-05-30 11:21:24.360911391 +0200
+@@ -8,7 +8,7 @@
+ INDEX="assets.txt"
+ 
+ for i in `cat $INDEX`
+-do 
++do
+ if [ -f $ASSETS_DIR/$i.png ]; then
+     echo $ASSETS_DIR/$i.png exists.
+ else
+@@ -16,8 +16,8 @@
+     echo Rendering $ASSETS_DIR/$i.png
+     $INKSCAPE --export-id=$i \
+               --export-id-only \
+-              --export-png=$ASSETS_DIR/$i.png $SRC_FILE >/dev/null #\
+-    # && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i.png 
++              --export-filename=$ASSETS_DIR/$i.png $SRC_FILE >/dev/null #\
++    # && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i.png
+ fi
+ if [ -f $ASSETS_DIR/$i@2.png ]; then
+     echo $ASSETS_DIR/$i@2.png exists.
+@@ -27,8 +27,8 @@
+     $INKSCAPE --export-id=$i \
+               --export-dpi=180 \
+               --export-id-only \
+-              --export-png=$ASSETS_DIR/$i@2.png $SRC_FILE >/dev/null #\
+-    # && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i@2.png 
++              --export-filename=$ASSETS_DIR/$i@2.png $SRC_FILE >/dev/null #\
++    # && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i@2.png
+ fi
+ done
+ exit 0

@@ -1,26 +1,29 @@
 pkgname=greybird-theme-git
-pkgver=v3.22.10.r4.g50e9273
+pkgver=v3.22.11.r6.g8f19555
 pkgrel=1
 pkgdesc="Greybird GTK2/3 and Openbox themes"
 arch=('any')
 url="https://github.com/shimmerproject/Greybird"
 license=('GPL2' 'CCPL:by-sa')
-makedepends=('git')
-source=('git+https://github.com/shimmerproject/Greybird.git')
-md5sums=('SKIP')
+makedepends=('git' 'meson')
+source=('git+https://github.com/shimmerproject/Greybird.git' 'openbox-3.tar.xf')
+md5sums=('SKIP'
+         '60b0694e73ad5737fc7db9ec798d0fee')
 
 pkgver() {
   cd "$srcdir/Greybird"
   git describe --long | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
 }
 
+build() {
+  cd "$srcdir/Greybird"
+  mkdir builddir
+  arch-meson builddir
+}
+
 package() {
-  install -d -m755 "$pkgdir/usr/share/themes/"
+  cd "$srcdir/Greybird"
+  DESTDIR="$pkgdir" ninja -C builddir install
 
-  cd "$srcdir"
-  rm -rf Greybird/.git/ Greybird/.gitignore
-  cp -r Greybird "$pkgdir/usr/share/themes/"
-
-  cd ..
-  cp -r openbox-3 "$pkgdir/usr/share/themes/Greybird"
+  cp -r "$srcdir/openbox-3" "$pkgdir/usr/share/themes/Greybird/"
 }

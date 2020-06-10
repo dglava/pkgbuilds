@@ -1,14 +1,14 @@
 pkgname=puddletag-python3-git
-pkgver=v1.2.0.r23.g1b6a5e9
+pkgver=v1.2.0.r114.g26736a3
 pkgrel=1
-pkgdesc="A tag editor for GNU/Linux - Python 3 version"
+pkgdesc="A tag editor for GNU/Linux - Python 3/Qt 5 version"
 arch=('any')
-url="http://docs.puddletag.net/"
+url="https://github.com/sandrotosi/puddletag"
 license=('GPL3')
-depends=('python' 'python-pyqt4' 'python-pyparsing' 'python-mutagen'
-         'python-configobj')
+depends=('python' 'python-pyqt5' 'python-pyparsing' 'python-mutagen'
+         'python-configobj' 'qt5-svg')
 conflicts=('puddletag')
-source=("git+https://github.com/keithgg/puddletag.git#branch=py3")
+source=("git+https://github.com/sandrotosi/puddletag.git")
 md5sums=('SKIP')
 
 pkgver() {

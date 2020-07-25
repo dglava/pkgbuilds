@@ -1,4 +1,4 @@
-pkgname=greybird-theme-git
+pkgname=greybird-gtk-theme-git
 pkgver=v3.22.11.r6.g8f19555
 pkgrel=1
 pkgdesc="Greybird GTK2/3 and Openbox themes"

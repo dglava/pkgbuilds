@@ -1,5 +1,5 @@
 pkgname=puddletag-python3-git
-pkgver=v1.2.0.r125.g5d81fdb
+pkgver=v1.2.0.r134.gf4c37b5
 pkgrel=1
 pkgdesc="A tag editor for GNU/Linux - Python 3/Qt 5 version"
 arch=('any')

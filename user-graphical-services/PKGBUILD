@@ -15,7 +15,7 @@ source=("cbatticon.service"
         "tint2.service"
         "user-graphical.target"
         "volumeicon.service")
-md5sums=('413f178c75433818ea0a65a30c555fab'
+md5sums=('6bf588742b4feb1d51e884e8bfc886b3'
          '4c9af19f5f924b58d992019925408283'
          '6c426716f334a7bbd7b933187ef20e13'
          'ba87837b8c5432c10dd09941f93ab9f6'
@@ -24,7 +24,7 @@ md5sums=('413f178c75433818ea0a65a30c555fab'
          '8b0cb188182b24f1d4335d91fd8cabaf'
          '6256080fae896de81298f741681cb861'
          '6c9051cad2af57064b731071995472ae'
-         'd2c92c16e834afffec6b77f63618eaf3')
+         'e1701a807f9df30a62ffb119397b4929')
 
 package() {
   cd "$srcdir"

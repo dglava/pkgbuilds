@@ -132,41 +132,18 @@ diff '--color=auto' -u -r --text zuki-themes.old/gtk/src/Zukitre/gtk-2.0/gtkrc z
 +++ zuki-themes.new/gtk/src/Zukitre/gtk-2.0/gtkrc	2020-05-30 12:02:48.577403190 +0200
 @@ -12,7 +12,7 @@
  gtk-color-scheme = "bg_color_dark:#2b2e30\ntext_color_dark:#f6f6f7"
- 
+
  gtk-icon-sizes     = "panel-applications-menu=24,24:panel-menu=24,24:panel=16,16:gtk-button=16,16"
 -gtk-button-images  = 1 # Disables icons for buttons with text
 +gtk-button-images  = 0 # Disables icons for buttons with text
  gtk-toolbar-style  = 0 # Disables text in toolbar
  gtk-auto-mnemonics = 1 # Disables lines under menu items
- 
-diff '--color=auto' -u -r --text zuki-themes.old/gtk/src/Zukitre/gtk-2.0/render-assets.sh zuki-themes.new/gtk/src/Zukitre/gtk-2.0/render-assets.sh
---- zuki-themes.old/gtk/src/Zukitre/gtk-2.0/render-assets.sh	2020-05-29 10:57:14.000000000 +0200
-+++ zuki-themes.new/gtk/src/Zukitre/gtk-2.0/render-assets.sh	2020-05-30 11:21:04.603677226 +0200
-@@ -8,7 +8,7 @@
- INDEX="assets.txt"
- 
- for i in `cat $INDEX`
--do 
-+do
- if [ -f $ASSETS_DIR/$i.png ]; then
-     echo $ASSETS_DIR/$i.png exists.
- else
-@@ -16,8 +16,8 @@
-     echo Rendering $ASSETS_DIR/$i.png
-     $INKSCAPE --export-id=$i \
-               --export-id-only \
--              --export-png=$ASSETS_DIR/$i.png $SRC_FILE >/dev/null #\
--    # && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i.png 
-+              --export-filename=$ASSETS_DIR/$i.png $SRC_FILE >/dev/null #\
-+    # && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i.png
- fi
- done
- exit 0
+
 diff '--color=auto' -u -r --text zuki-themes.old/gtk/src/Zukitre/gtk-3.0/_drawing.scss zuki-themes.new/gtk/src/Zukitre/gtk-3.0/_drawing.scss
 --- zuki-themes.old/gtk/src/Zukitre/gtk-3.0/_drawing.scss	2020-05-29 10:57:14.000000000 +0200
 +++ zuki-themes.new/gtk/src/Zukitre/gtk-3.0/_drawing.scss	2020-05-30 12:00:57.089286971 +0200
 @@ -641,14 +641,14 @@
- 
+
    @if $t==normal  {
      background-clip: if($checked, border-box, padding-box);
 -    background-image: linear-gradient(to bottom, $c, $c);
@@ -177,44 +154,10 @@ diff '--color=auto' -u -r --text zuki-themes.old/gtk/src/Zukitre/gtk-3.0/_drawin
 -    color: $tc;
 +    color: $fg_color;
    }
- 
+
    @if $t==hover {
 -    background-image: if($c == white, image(darken($c, 5%)), linear-gradient(to bottom, lighten($c, 6%), lighten($c, 6%)));
 +    background-color: $selected_fg_color;
    }
- 
+
    @if $t==active {
-diff '--color=auto' -u -r --text zuki-themes.old/gtk/src/Zukitre/gtk-3.0/render-assets.sh zuki-themes.new/gtk/src/Zukitre/gtk-3.0/render-assets.sh
---- zuki-themes.old/gtk/src/Zukitre/gtk-3.0/render-assets.sh	2020-05-29 10:57:14.000000000 +0200
-+++ zuki-themes.new/gtk/src/Zukitre/gtk-3.0/render-assets.sh	2020-05-30 11:21:24.360911391 +0200
-@@ -8,7 +8,7 @@
- INDEX="assets.txt"
- 
- for i in `cat $INDEX`
--do 
-+do
- if [ -f $ASSETS_DIR/$i.png ]; then
-     echo $ASSETS_DIR/$i.png exists.
- else
-@@ -16,8 +16,8 @@
-     echo Rendering $ASSETS_DIR/$i.png
-     $INKSCAPE --export-id=$i \
-               --export-id-only \
--              --export-png=$ASSETS_DIR/$i.png $SRC_FILE >/dev/null #\
--    # && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i.png 
-+              --export-filename=$ASSETS_DIR/$i.png $SRC_FILE >/dev/null #\
-+    # && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i.png
- fi
- if [ -f $ASSETS_DIR/$i@2.png ]; then
-     echo $ASSETS_DIR/$i@2.png exists.
-@@ -27,8 +27,8 @@
-     $INKSCAPE --export-id=$i \
-               --export-dpi=180 \
-               --export-id-only \
--              --export-png=$ASSETS_DIR/$i@2.png $SRC_FILE >/dev/null #\
--    # && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i@2.png 
-+              --export-filename=$ASSETS_DIR/$i@2.png $SRC_FILE >/dev/null #\
-+    # && $OPTIPNG -o7 --quiet $ASSETS_DIR/$i@2.png
- fi
- done
- exit 0

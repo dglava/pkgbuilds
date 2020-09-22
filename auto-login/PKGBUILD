@@ -1,0 +1,17 @@
+pkgname=auto-login
+pkgver=1
+pkgrel=1
+pkgdesc="Shell script for conditioned auto-login"
+arch=('any')
+url="http://dglava.github.io"
+license=('GPL')
+depends=()
+source=('auto-login' 'override.conf')
+sha1sums=('3de9a07fad9e30838349ef0fdac69303e2b1c956'
+          '8b367ff1ceed5e7a6811ee3828940052022faa1e')
+
+package() {
+  install -Dm 755 "${srcdir}/auto-login" "${pkgdir}/usr/bin/auto-login"
+  install -Dm 755 "${srcdir}/override.conf" "${pkgdir}/usr/lib/systemd/system/getty@tty1.service.d/override.conf"
+}
+

@@ -1,0 +1,12 @@
+#!/bin/bash
+
+lock=/run/lock/login-done.lock
+tty=${1:-tty1}
+term=${2}
+
+# if already logged in once
+[[ -e $lock ]] && /usr/bin/agetty --noclear $tty $term
+
+# on first login
+touch $lock
+/usr/bin/agetty --skip-login --autologin dino --nonewline --noissue --noclear $tty $term

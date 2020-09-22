@@ -1,5 +1,5 @@
 pkgname=labwc-git
-pkgver=r180.c0a8077
+pkgver=r185.00a48f8
 pkgrel=1
 pkgdesc="Openbox alternative for"
 arch=('x86_64')

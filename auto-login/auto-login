@@ -5,7 +5,7 @@ tty=${1:-tty1}
 term=${2}
 
 # if already logged in once
-[[ -e $lock ]] && /usr/bin/agetty --noclear $tty $term
+[[ -e $lock ]] && /usr/bin/agetty -o '-p -- \u' --noclear $tty $term
 
 # on first login
 touch $lock

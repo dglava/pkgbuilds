@@ -7,7 +7,7 @@ url="http://dglava.github.io"
 license=('GPL')
 depends=()
 source=('auto-login' 'override.conf')
-sha1sums=('3de9a07fad9e30838349ef0fdac69303e2b1c956'
+sha1sums=('001023af21191522919d7b68bc50a3bf14d3f126'
           '8b367ff1ceed5e7a6811ee3828940052022faa1e')
 
 package() {

@@ -1,6 +1,6 @@
 pkgname=mpd-custom
 conflicts=("mpd")
-pkgver=0.21.25
+pkgver=0.22.3
 pkgrel=1
 pkgdesc='Flexible, powerful, server-side application for playing music'
 url='http://www.musicpd.org/'
@@ -11,7 +11,7 @@ depends=('ffmpeg' 'curl'
          'icu' 'libupnp' 'libsamplerate' 'libsoxr')
 makedepends=('boost' 'doxygen' 'meson')
 source=("https://www.musicpd.org/download/mpd/${pkgver%.*}/${pkgname%-custom}-${pkgver}.tar.xz")
-sha1sums=('7e733fc9bf98c9c25f6b780e0df2347d0f1717b2')
+sha1sums=('30bb8adcb6665fa3863f181f14a513209876297a')
 
 build() {
   # remove ipv6 support; use ffmpeg for mp3 decoding instead of mad;
@@ -27,7 +27,7 @@ build() {
   -Dchromaprint=disabled \
   -Dcue=false \
   -Dcurl=enabled \
-  -Ddocumentation=false \
+  -Ddocumentation=disabled \
   -Ddsd=false \
   -Dexpat=disabled \
   -Dfaad=disabled \

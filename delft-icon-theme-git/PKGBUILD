@@ -1,5 +1,5 @@
 pkgname=delft-icon-theme-git
-pkgver=v1.13.r0.g7f903c4f
+pkgver=v1.14.r0.ga9ee531f
 pkgrel=1
 pkgdesc="Delft icon theme"
 arch=("any")
@@ -17,9 +17,9 @@ pkgver() {
 package() {
   cd "$srcdir"/iconpack-delft
 
-  # include the fixed symlinks until it gets merged upstream
-  git fetch origin pull/1/head:symlinks
-  git checkout symlinks
+#  # include the fixed symlinks until it gets merged upstream
+#  git fetch origin pull/1/head:symlinks
+#  git checkout symlinks
 
   mkdir -p "$pkgdir"/usr/share/icons
   cp -r Delft "$pkgdir"/usr/share/icons

@@ -1,8 +1,0 @@
-[Unit]
-Description=Change microphone LED to follow-route
-
-[Service]
-ExecStart=/bin/bash -c "echo follow-route > /sys/devices/virtual/sound/ctl-led/mic/mode"
-
-[Install]
-WantedBy=user-graphical.target

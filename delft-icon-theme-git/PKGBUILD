@@ -1,5 +1,5 @@
 pkgname=delft-icon-theme-git
-pkgver=v1.14.r0.ga9ee531f
+pkgver=v1.15.r0.gdd693fcf
 pkgrel=1
 pkgdesc="Delft icon theme"
 arch=("any")

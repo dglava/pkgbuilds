@@ -6,7 +6,6 @@ arch=('any')
 url="http://dglava.github.io"
 license=('GPL')
 source=("cbatticon.service"
-        "firefox-dpms.service"
         "mpdas.service"
         "mpd-custom.service"
         "nitrogen.service"
@@ -15,8 +14,7 @@ source=("cbatticon.service"
         "tint2.service"
         "user-graphical.target"
         "volumeicon.service")
-md5sums=('0b3391b5b09d10c6fd92652b0fe1e6b4'
-         '4c9af19f5f924b58d992019925408283'
+md5sums=('49966dbd8aa92702afb0768387eace91'
          '6c426716f334a7bbd7b933187ef20e13'
          'ba87837b8c5432c10dd09941f93ab9f6'
          '9e8aecf703338aad4b202f41494dc7ec'

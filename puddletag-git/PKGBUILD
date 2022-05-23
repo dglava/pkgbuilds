@@ -1,5 +1,5 @@
 pkgname=puddletag-git
-pkgver=2.0.1.r26.g66aa1f4
+pkgver=2.1.1.r0.g8501aa8
 pkgrel=1
 pkgdesc="A tag editor for GNU/Linux"
 arch=('any')
@@ -17,6 +17,6 @@ pkgver() {
 }
 
 package() {
-  cd "${pkgname%-git}/source"
+  cd "${srcdir}/${pkgname%-git}"
   python setup.py install --root="${pkgdir}"
 }

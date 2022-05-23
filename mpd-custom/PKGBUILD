@@ -1,6 +1,6 @@
 pkgname=mpd-custom
 conflicts=("mpd")
-pkgver=0.22.8
+pkgver=0.23.6
 pkgrel=1
 pkgdesc='Flexible, powerful, server-side application for playing music'
 url='http://www.musicpd.org/'
@@ -8,10 +8,10 @@ license=('GPL')
 arch=('i686' 'x86_64')
 depends=('ffmpeg' 'curl'
          'sqlite' 'wavpack' 'libid3tag' 'yajl' 'libmpdclient'
-         'icu' 'libupnp' 'libsamplerate' 'libsoxr')
+         'icu' 'libupnp' 'libsamplerate' 'libsoxr' 'fmt')
 makedepends=('boost' 'doxygen' 'meson')
 source=("https://www.musicpd.org/download/mpd/${pkgver%.*}/${pkgname%-custom}-${pkgver}.tar.xz")
-sha1sums=('ddab81230fcb1372b6a0993503a87d68365a3014')
+sha1sums=('6cb3be3dfe686ac4945b7fc2c671c3d269fa320d')
 
 build() {
   # remove ipv6 support; use ffmpeg for mp3 decoding instead of mad;
@@ -48,7 +48,9 @@ build() {
   -Dneighbor=false \
   -Dnfs=disabled \
   -Dopenal=disabled \
+  -Dopenmpt=disabled \
   -Doss=disabled \
+  -Dpipewire=disabled \
   -Dqobuz=disabled \
   -Drecorder=false \
   -Dshine=disabled \
@@ -60,13 +62,12 @@ build() {
   -Dsolaris_output=disabled \
   -Dsoundcloud=disabled \
   -Dsoxr=disabled \
-  -Dtidal=disabled \
   -Dtremor=disabled \
   -Dtwolame=disabled \
   -Dupnp=disabled \
   -Dvorbis=enabled \
   -Dvorbisenc=disabled \
-  -Dwave_encoder=false \
+  -Dwave_encoder=true \
   -Dwavpack=disabled \
   -Dwebdav=disabled \
   -Dwildmidi=disabled \

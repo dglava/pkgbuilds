@@ -1,5 +1,5 @@
 pkgname=check-news-hook
-pkgver=1
+pkgver=1.1
 pkgrel=1
 pkgdesc="Checks ArchLinux news before updating packages"
 arch=('any')
@@ -7,7 +7,7 @@ url="http://dglava.github.io"
 license=('GPL')
 depends=('curl')
 source=('update-news' 'check-news.hook')
-sha1sums=('9222ea481bb12409e122c7946cd4f32e3821018d'
+sha1sums=('d40e1da903bcec5ff8830b02b2f44462b78f8a2d'
           'dbf04867f9b5c42e6b9097c1e11460187b9175c1')
 
 package() {

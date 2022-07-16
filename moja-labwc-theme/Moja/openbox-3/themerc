@@ -1,0 +1,38 @@
+# general
+border.width: 2
+padding.height: 2
+menu.overlap.x: 0
+menu.overlap.y: 0
+
+# window border
+window.active.border.color: #484848
+window.inactive.border.color: #484848
+
+# window titlebar background
+window.active.title.bg.color: #424242
+window.inactive.title.bg.color: #424242
+
+# window titlebar text
+window.active.label.text.color: #dcdcdc
+window.inactive.label.text.color: #888888
+window.label.text.justify: center
+
+# window buttons
+window.active.button.unpressed.image.color: #dcdcdc
+window.inactive.button.unpressed.image.color: #888888
+
+# menu
+menu.items.bg.color: #424242
+menu.items.text.color: #dcdcdc
+menu.items.active.bg.color: #6699cc
+menu.items.active.text.color: #f9f9f9
+menu.separator.width: 1
+menu.separator.padding.width: 2
+menu.separator.padding.height: 4
+menu.separator.color: #262626
+
+# on screen display (window-cycle dialog)
+osd.bg.color: #424242
+osd.border.color: #424242
+osd.border.width: 1
+osd.label.text.color: #dcdcdc

@@ -1,13 +1,13 @@
 pkgname=labwc-git
-pkgver=r185.00a48f8
+pkgver=r1117.1f0055a
 pkgrel=1
-pkgdesc="Openbox alternative for"
+pkgdesc="Stacking Wayland compositor"
 arch=('x86_64')
 url="https://github.com/johanmalm/labwc"
 license=('GPL2')
-depends=('wlroots' 'cairo' 'pango' 'libxml2' 'glib2'
-				 'wayland' 'wayland-protocols' 'xorg-server-xwayland')
-makedepends=('meson' 'git')
+depends=('wlroots' 'cairo' 'pango' 'libxml2' 'glib2' 'libinput'
+				 'libxkbcommon' 'wayland')
+makedepends=('meson' 'git' 'ninja' 'wayland-protocols')
 conflicts=('labwc')
 source=('git+https://github.com/johanmalm/labwc.git')
 sha1sums=('SKIP')
@@ -19,11 +19,11 @@ pkgver() {
 
 build() {
 	cd ${pkgname%-git}
-  arch-meson ../build
+  arch-meson -Dxwayland=disabled ../build
   ninja -C ../build
 }
 
 package() {
   cd ${pkgname%-git}
-  DESTDIR=${pkgdir} meson install -C ../build
+  DESTDIR=${pkgdir} arch-meson install -C ../build
 }

@@ -16,7 +16,7 @@ pkgver() {
 
 build() {
   cd "$srcdir/${pkgname%-git}"
-  meson "build" --prefix=/usr
+  arch-meson "build" --prefix=/usr
 }
 
 package() {

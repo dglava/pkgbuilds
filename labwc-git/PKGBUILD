@@ -1,5 +1,5 @@
 pkgname=labwc-git
-pkgver=r1117.1f0055a
+pkgver=r1125.fd7ec0a
 pkgrel=1
 pkgdesc="Stacking Wayland compositor"
 arch=('x86_64')

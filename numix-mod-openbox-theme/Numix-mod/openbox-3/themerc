@@ -5,9 +5,8 @@
 # Theme slightly modified by changing a few colors.
 # by Dino Duratović <dinomol at mail dot com>
 
-
 # Menu
-menu.border.color: #424242
+menu.border.color: #484848
 
 menu.title.bg: flat solid
 menu.title.bg.color: #424242
@@ -27,7 +26,6 @@ menu.separator.color: #262626
 menu.separator.width: 1
 menu.separator.padding.width: 2
 menu.separator.padding.height: 4
-
 
 # Active window
 window.active.border.color: #484848
@@ -58,7 +56,6 @@ window.active.button.disabled.bg: flat solid
 window.active.button.disabled.bg.color: #424242
 window.active.button.disabled.image.color: #888888
 
-
 # Inactive window
 window.inactive.border.color: #484848
 
@@ -88,10 +85,9 @@ window.inactive.button.disabled.bg: flat solid
 window.inactive.button.disabled.bg.color: #424242
 window.inactive.button.disabled.image.color: #888888
 
-
 # OSD
 osd.border.width: 1
-osd.border.color: #424242
+osd.border.color: #484848
 
 osd.bg: flat solid
 osd.bg.color: #424242
@@ -119,13 +115,11 @@ osd.button.focused.*.border.color: #1e1e1e
 
 osd.button.focused.box.color: #1793d1
 
-
 # Fonts
 window.active.label.text.font:shadow=n
 window.inactive.label.text.font:shadow=n
 menu.items.font:shadow=n
 menu.title.text.font:shadow=n
-
 
 # Everything else
 border.width: 2

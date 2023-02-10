@@ -16,7 +16,7 @@ source=("cbatticon.service"
         "volumeicon.service")
 md5sums=('49966dbd8aa92702afb0768387eace91'
          '6c426716f334a7bbd7b933187ef20e13'
-         'ba87837b8c5432c10dd09941f93ab9f6'
+         'c174c9419be604b4381fde7273513004'
          '9e8aecf703338aad4b202f41494dc7ec'
          'af4183ce2e9214db424abe28b634f0e4'
          '8b0cb188182b24f1d4335d91fd8cabaf'

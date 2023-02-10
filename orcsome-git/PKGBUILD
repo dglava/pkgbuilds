@@ -1,12 +1,12 @@
 pkgname=orcsome-git
-pkgver=0.6.r5.gcc237ae
+pkgver=0.6.r6.gdbecd05
 pkgrel=1
 pkgdesc="Scripting extension for NETWM compliant window managers"
 arch=('any')
 url="https://github.com/baverman/orcsome"
 license=('MIT')
-depends=('python2' 'python2-cffi' 'libev')
-makedepends=('git' 'python2-setuptools')
+depends=('python' 'python-cffi' 'libev')
+makedepends=('git' 'python-setuptools')
 source=("git+https://github.com/baverman/orcsome.git")
 md5sums=('SKIP')
 
@@ -17,5 +17,5 @@ pkgver() {
 
 package() {
   cd "${pkgname%-git}"
-  python2 setup.py install --root="$pkgdir"
+  python setup.py install --root="$pkgdir"
 }

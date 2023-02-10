@@ -1,12 +1,12 @@
 pkgname=labwc-git
-pkgver=r1125.fd7ec0a
+pkgver=r1444.103a2a8
 pkgrel=1
 pkgdesc="Stacking Wayland compositor"
 arch=('x86_64')
 url="https://github.com/johanmalm/labwc"
 license=('GPL2')
 depends=('wlroots' 'cairo' 'pango' 'libxml2' 'glib2' 'libinput'
-				 'libxkbcommon' 'wayland')
+				 'libxkbcommon' 'wayland' 'scdoc')
 makedepends=('meson' 'git' 'ninja' 'wayland-protocols')
 conflicts=('labwc')
 source=('git+https://github.com/johanmalm/labwc.git')
@@ -18,12 +18,12 @@ pkgver() {
 }
 
 build() {
-	cd ${pkgname%-git}
-  arch-meson -Dxwayland=disabled ../build
-  ninja -C ../build
+	cd "${srcdir}"/"${pkgname%-git}"
+  arch-meson -Dxwayland=disabled build
+  ninja -C build
 }
 
 package() {
-  cd ${pkgname%-git}
-  DESTDIR=${pkgdir} arch-meson install -C ../build
+	cd "${srcdir}"/"${pkgname%-git}"
+  meson install -C build --destdir "${pkgdir}"
 }

@@ -3,7 +3,7 @@ Description=Music Player Daemon
 
 [Service]
 Type=notify
-ExecStart=/usr/bin/mpd --no-daemon
+ExecStart=/usr/bin/mpd --systemd
 
 [Install]
 WantedBy=user-graphical.target

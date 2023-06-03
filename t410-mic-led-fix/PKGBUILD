@@ -1,0 +1,13 @@
+pkgname=t410-mic-led-fix
+pkgver=1
+pkgrel=1
+pkgdesc="Make the microphone LED turn on only when the mic is on"
+arch=('any')
+url="http://dglava.github.io"
+license=('GPL')
+source=('mic-led.service')
+sha1sums=('8ef11a4371ded0838cec5071d8fb72be560ba471')
+
+package() {
+  install -Dm 644 "${srcdir}/mic-led.service" "${pkgdir}/usr/lib/systemd/system/"
+}

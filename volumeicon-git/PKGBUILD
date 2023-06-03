@@ -1,5 +1,5 @@
 pkgname=volumeicon-git
-pkgver=0.5.1.r40.g27be3d4
+pkgver=0.5.1.r50.gb034dd1
 pkgrel=1
 pkgdesc="Volume control for your system tray"
 arch=("x86_64")
@@ -18,7 +18,7 @@ pkgver() {
 build() {
   cd "$srcdir/${pkgname%-git}"
   ./autogen.sh
-  ./configure --prefix=/usr --enable-notify
+  ./configure --prefix=/usr --enable-notify --with-default-mixerapp=pavucontrol
   make
 }
 

@@ -1,29 +1,29 @@
-pkgname=labwc-git
-pkgver=r1444.103a2a8
+pkgname=labwc-noxwayland-git
+pkgver=r1581.3bd441c
 pkgrel=1
-pkgdesc="Stacking Wayland compositor"
+pkgdesc="Stacking Wayland compositor - without Xwayland, latest master branch"
 arch=('x86_64')
 url="https://github.com/johanmalm/labwc"
 license=('GPL2')
 depends=('wlroots' 'cairo' 'pango' 'libxml2' 'glib2' 'libinput'
 				 'libxkbcommon' 'wayland' 'scdoc')
 makedepends=('meson' 'git' 'ninja' 'wayland-protocols')
-conflicts=('labwc')
-source=('git+https://github.com/johanmalm/labwc.git')
+conflicts=('labwc' 'labwc-noxwayland')
+source=('git+https://github.com/labwc/labwc.git')
 sha1sums=('SKIP')
 
 pkgver() {
-	cd ${pkgname%-git}
+	cd ${pkgname%-noxwayland-git}
   printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
 }
 
 build() {
-	cd "${srcdir}"/"${pkgname%-git}"
+	cd "${srcdir}"/"${pkgname%-noxwayland-git}"
   arch-meson -Dxwayland=disabled build
   ninja -C build
 }
 
 package() {
-	cd "${srcdir}"/"${pkgname%-git}"
+	cd "${srcdir}"/"${pkgname%-noxwayland-git}"
   meson install -C build --destdir "${pkgdir}"
 }

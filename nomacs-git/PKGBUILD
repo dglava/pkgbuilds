@@ -1,10 +1,11 @@
 pkgname=nomacs-git
-pkgver=3.2.0.r480.gdaa391b3
+pkgver=3.2.0.r1423.ga2bbecc1
 pkgrel=1
 pkgdesc="A QT image viewer"
 arch=("x86_64")
 url="http://www.nomacs.org/"
 license=('GPL3')
+conflicts=('nomacs')
 depends=('qt5-svg' 'exiv2' 'libraw' 'opencv' 'desktop-file-utils')
 makedepends=("cmake" "qt5-tools")
 source=("git+https://github.com/nomacs/nomacs.git")
@@ -19,7 +20,7 @@ build() {
   cd "${pkgname%-git}/ImageLounge"
   mkdir "build"
   cd "build"
-  cmake .. -DCMAKE_INSTALL_PREFIX=/usr -DENABLE_PLUGINS=OFF
+  cmake .. -DCMAKE_INSTALL_PREFIX=/usr -DENABLE_PLUGINS=OFF -DENABLE_QUAZIP=OFF
   make
 }
 

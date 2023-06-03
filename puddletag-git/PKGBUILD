@@ -1,5 +1,5 @@
 pkgname=puddletag-git
-pkgver=2.2.0.r0.g91948b1
+pkgver=2.2.0.r32.g47185ad
 pkgrel=1
 pkgdesc="A tag editor for GNU/Linux"
 arch=('any')
@@ -7,6 +7,7 @@ url="https://github.com/puddletag/puddletag"
 license=('GPL3')
 depends=('python' 'python-pyqt5' 'python-pyparsing' 'python-mutagen'
          'python-configobj' 'qt5-svg')
+makedepends=('python-setuptools')
 conflicts=('puddletag')
 source=("git+https://github.com/puddletag/puddletag")
 md5sums=('SKIP')

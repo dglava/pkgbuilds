@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 # Toggles the touchpad on and off
 
-# Copyright (C) 2017 Dino Duratović <dinomol at mail dot com>
+# Copyright (C) 2017-2023 Dino Duratović <dinomol at mail dot com>
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -16,12 +16,20 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+if [[ $1 == "-q" ]]; then
+  quiet=1
+fi
+
 id=$(xinput | grep -i touchpad | grep -oP "(?<=id=)\d*")
 
 if xinput list-props "$id" | grep -q "Device Enabled.*1$"; then
   xinput disable "$id"
-  notify-send "Touchpad turned OFF" --icon=input-touchpad
+  if [[ -z $quiet ]]; then
+    notify-send "Touchpad turned OFF" --icon=input-touchpad
+  fi
 else
   xinput enable "$id"
-  notify-send "Touchpad turned ON" --icon=input-touchpad
+  if [[ -z $quiet ]]; then
+    notify-send "Touchpad turned ON" --icon=input-touchpad
+  fi
 fi

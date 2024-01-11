@@ -1,0 +1,26 @@
+pkgname=battytray-git
+pkgver=r16.fa08c90
+pkgrel=1
+pkgdesc="Battery icon for the system tray"
+arch=('any')
+url="https://github.com/dglava/battytray"
+license=('GPL3')
+depends=('python' 'python-pyqt6' 'dbus-python')
+makedepends=('git' 'python-setuptools' 'python-installer' 'python-build')
+source=('git+https://github.com/dglava/battytray.git')
+md5sums=('SKIP')
+
+pkgver() {
+	cd "$srcdir/${pkgname%-git}"
+	printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+build() {
+	cd "$srcdir/${pkgname%-git}"
+  python -m build
+}
+
+package() {
+	cd "$srcdir/${pkgname%-git}/dist"
+  python -m installer -d $pkgdir *.whl
+}

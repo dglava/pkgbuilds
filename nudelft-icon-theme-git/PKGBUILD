@@ -1,0 +1,26 @@
+pkgname=nudelft-icon-theme-git
+pkgver=1.0.2.r0.g25b2e32d
+pkgrel=1
+pkgdesc="Continuation of Delft Iconpack (Faenza icon theme)"
+arch=("any")
+url="https://github.com/liminalFrog/nuDelft.git"
+license=('GPL3')
+makedepends=('git')
+conflicts=('delft-icon-theme' 'delft-icon-theme-git')
+source=('git+https://github.com/liminalFrog/nuDelft.git')
+md5sums=('SKIP')
+
+pkgver() {
+  cd "$srcdir"/nuDelft
+  git describe --long --tags | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
+}
+
+package() {
+  cd "$srcdir"/nuDelft
+
+  mkdir -p "$pkgdir"/usr/share/icons
+  cp -r Delft "$pkgdir"/usr/share/icons
+  cp -r Delft-Dark "$pkgdir"/usr/share/icons
+  cp -r Delft-Darker "$pkgdir"/usr/share/icons
+  cp -r Delft-Darkest "$pkgdir"/usr/share/icons
+}

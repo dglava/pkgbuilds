@@ -11,16 +11,16 @@ source=('git+https://github.com/dglava/battytray.git')
 md5sums=('SKIP')
 
 pkgver() {
-	cd "$srcdir/${pkgname%-git}"
-	printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+  cd "$srcdir/${pkgname%-git}"
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
 }
 
 build() {
-	cd "$srcdir/${pkgname%-git}"
+  cd "$srcdir/${pkgname%-git}"
   python -m build
 }
 
 package() {
-	cd "$srcdir/${pkgname%-git}/dist"
+  cd "$srcdir/${pkgname%-git}/dist"
   python -m installer -d $pkgdir *.whl
 }

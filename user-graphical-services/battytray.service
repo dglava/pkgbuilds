@@ -1,0 +1,11 @@
+[Unit]
+Description=Battery tray icon
+Requires=tint2.service
+After=tint2.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/battytray
+
+[Install]
+WantedBy=user-graphical.target

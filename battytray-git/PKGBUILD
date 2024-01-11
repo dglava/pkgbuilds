@@ -1,5 +1,5 @@
 pkgname=battytray-git
-pkgver=r16.fa08c90
+pkgver=r19.9366ea0
 pkgrel=1
 pkgdesc="Battery icon for the system tray"
 arch=('any')

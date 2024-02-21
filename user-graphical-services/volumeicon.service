@@ -1,11 +1,11 @@
 [Unit]
 Description=Volume tray icon
+Requires=tint2.service
+After=tint2.service
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/volumeicon
+ExecStart=/usr/bin/volumeicon -d "HDA Intel MID"
 
 [Install]
 WantedBy=user-graphical.target
-#Requires=tint2.service
-#After=tint2.service

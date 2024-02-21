@@ -1,0 +1,11 @@
+[Unit]
+Description=Volume tray icon
+Requires=tint2.service
+After=tint2.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/wolumeicon -m pavucontrol
+
+[Install]
+WantedBy=user-graphical.target

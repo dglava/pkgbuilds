@@ -14,7 +14,8 @@ source=("battytray.service"
         "picom.service"
         "tint2.service"
         "user-graphical.target"
-        "volumeicon.service")
+        "volumeicon.service"
+        "wolumeicon.service")
 md5sums=('4497e633f33e7df15a2efc38514c855f'
          '49966dbd8aa92702afb0768387eace91'
          '6c426716f334a7bbd7b933187ef20e13'
@@ -24,7 +25,8 @@ md5sums=('4497e633f33e7df15a2efc38514c855f'
          '8b0cb188182b24f1d4335d91fd8cabaf'
          '6256080fae896de81298f741681cb861'
          '6c9051cad2af57064b731071995472ae'
-         '85edde7e96dab6ef622d5016223c1d62')
+         '85edde7e96dab6ef622d5016223c1d62'
+         '41e5969229e03a7c7d7252919be8d4db')
 
 package() {
   cd "$srcdir"

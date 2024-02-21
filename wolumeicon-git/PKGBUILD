@@ -1,13 +1,13 @@
-pkgname=battytray-git
-pkgver=r20.3124785
+pkgname=wolumeicon-git
+pkgver=r1.58d5f12
 pkgrel=1
-pkgdesc="Battery icon for the system tray"
+pkgdesc="Volume icon for the system tray"
 arch=('any')
-url="https://github.com/dglava/battytray"
+url="https://github.com/dglava/wolumeicon"
 license=('GPL3')
 depends=('python' 'python-pyqt6' 'dbus-python')
 makedepends=('git' 'python-setuptools' 'python-installer' 'python-build')
-source=('git+https://github.com/dglava/battytray.git')
+source=('git+https://github.com/dglava/wolumeicon.git')
 md5sums=('SKIP')
 
 pkgver() {

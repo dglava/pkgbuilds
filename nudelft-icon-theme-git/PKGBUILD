@@ -1,5 +1,5 @@
 pkgname=nudelft-icon-theme-git
-pkgver=1.0.2.r0.g25b2e32d
+pkgver=1.0.4.r2.g565340e0
 pkgrel=1
 pkgdesc="Continuation of Delft Iconpack (Faenza icon theme)"
 arch=("any")

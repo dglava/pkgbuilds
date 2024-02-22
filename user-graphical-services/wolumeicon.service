@@ -1,7 +1,7 @@
 [Unit]
 Description=Volume tray icon
 Requires=tint2.service
-After=tint2.service
+After=tint2.service pipewire.service
 
 [Service]
 Type=simple

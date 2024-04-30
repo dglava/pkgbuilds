@@ -4,6 +4,7 @@ Description=Dynamic window manager actions
 [Service]
 Type=simple
 ExecStart=/usr/bin/orcsome
+Restart=on-failure
 
 [Install]
 WantedBy=user-graphical.target

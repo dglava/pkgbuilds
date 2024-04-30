@@ -1,11 +1,11 @@
 pkgname=labwc-noxwayland-git
-pkgver=r1820.1b8e404
+pkgver=r2120.4ecac265
 pkgrel=1
 pkgdesc="Stacking Wayland compositor - without Xwayland, latest master branch"
 arch=('x86_64')
 url="https://github.com/johanmalm/labwc"
 license=('GPL2')
-depends=('wlroots0.16' 'cairo' 'pango' 'libxml2' 'glib2' 'libinput'
+depends=('wlroots' 'cairo' 'pango' 'libxml2' 'glib2' 'libinput'
 				 'libxkbcommon' 'wayland' 'scdoc')
 makedepends=('meson' 'git' 'wayland-protocols')
 conflicts=('labwc' 'labwc-noxwayland')

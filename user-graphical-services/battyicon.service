@@ -5,7 +5,7 @@ After=tint2.service
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/battytray
+ExecStart=/usr/bin/battyicon
 
 [Install]
 WantedBy=user-graphical.target

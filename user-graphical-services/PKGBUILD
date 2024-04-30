@@ -5,7 +5,7 @@ pkgdesc="Systemd services for GUI programs started after logging in"
 arch=('any')
 url="http://dglava.github.io"
 license=('GPL')
-source=("battytray.service"
+source=("battyicon.service"
         "cbatticon.service"
         "mpdas.service"
         "mpd-custom.service"
@@ -16,12 +16,12 @@ source=("battytray.service"
         "user-graphical.target"
         "volumeicon.service"
         "wolumeicon.service")
-md5sums=('4497e633f33e7df15a2efc38514c855f'
+md5sums=('3e579c6bbe67bf82a20340e67827a5af'
          '49966dbd8aa92702afb0768387eace91'
          '6c426716f334a7bbd7b933187ef20e13'
          'c174c9419be604b4381fde7273513004'
          '9e8aecf703338aad4b202f41494dc7ec'
-         'af4183ce2e9214db424abe28b634f0e4'
+         '9491708348b71236cfc907fb6e0aec33'
          '8b0cb188182b24f1d4335d91fd8cabaf'
          '6256080fae896de81298f741681cb861'
          '6c9051cad2af57064b731071995472ae'

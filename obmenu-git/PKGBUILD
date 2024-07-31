@@ -1,5 +1,5 @@
 pkgname=obmenu-git
-pkgver=r31.b4900d8
+pkgver=r53.e6aada0
 pkgrel=1
 pkgdesc="Openbox/Waybox menu editor"
 arch=('any')

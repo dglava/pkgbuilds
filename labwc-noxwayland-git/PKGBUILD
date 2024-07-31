@@ -1,5 +1,5 @@
 pkgname=labwc-noxwayland-git
-pkgver=r2120.4ecac265
+pkgver=r2394.750d37b1
 pkgrel=1
 pkgdesc="Stacking Wayland compositor - without Xwayland, latest master branch"
 arch=('x86_64')

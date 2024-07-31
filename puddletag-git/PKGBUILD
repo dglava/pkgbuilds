@@ -1,5 +1,5 @@
 pkgname=puddletag-git
-pkgver=2.3.0.r19.g180463d
+pkgver=2.4.0.r4.g7f15876
 pkgrel=1
 pkgdesc="A tag editor for GNU/Linux"
 arch=('any')

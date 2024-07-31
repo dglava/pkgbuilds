@@ -1,13 +1,13 @@
 pkgname=nomacs-git
-pkgver=3.2.0.r1449.g941f0d64
+pkgver=3.2.0.r1557.g623d6033
 pkgrel=1
 pkgdesc="A QT image viewer"
 arch=("x86_64")
 url="http://www.nomacs.org/"
 license=('GPL3')
 conflicts=('nomacs')
-depends=('qt5-svg' 'exiv2' 'libraw' 'opencv' 'desktop-file-utils')
-makedepends=("cmake" "qt5-tools")
+depends=('qt6' 'qt6-svg' 'exiv2' 'libraw' 'opencv' 'desktop-file-utils')
+makedepends=("cmake" "qt6-tools" "git")
 source=("git+https://github.com/nomacs/nomacs.git")
 md5sums=('SKIP')
 

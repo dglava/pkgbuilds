@@ -5,7 +5,7 @@ pkgdesc="Zukitre GTK theme with slight modifications"
 arch=('any')
 url="https://github.com/dglava/pkgbuilds/tree/master/zukitre-mod-gtk-theme-git"
 license=('GPL3')
-makedepends=('git' 'meson')
+makedepends=('git' 'meson' 'sassc')
 source=('git+https://github.com/lassekongo83/zuki-themes.git'
         'colors.patch')
 md5sums=('SKIP'

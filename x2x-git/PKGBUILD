@@ -1,5 +1,5 @@
 pkgname=x2x-git
-pkgver=r132.ec10215
+pkgver=r135.5369279
 pkgrel=1
 pkgdesc="x2x allows the keyboard and mouse to be used to control another X display"
 arch=("x86_64")

@@ -1,0 +1,9 @@
+[Unit]
+Description=Waybar taskbar
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/waybar
+
+[Install]
+WantedBy=user-graphical.target

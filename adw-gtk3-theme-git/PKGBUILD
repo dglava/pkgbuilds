@@ -1,0 +1,27 @@
+# Maintainer: Dino Duratović <dinomol@mail.com>
+pkgname=adw-gtk3
+pkgver=r466.d88deed
+pkgrel=1
+pkgdesc="The theme from libadwaita ported to GTK-3"
+arch=('any')
+url="https://github.com/lassekongo83/adw-gtk3"
+license=('LGPL-2.1')
+makedepends=('git' 'ninja' 'meson' 'sassc')
+source=('git+https://github.com/lassekongo83/adw-gtk3.git')
+sha256sums=('SKIP')
+
+pkgver() {
+	cd "$srcdir/${pkgname%-git}"
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+build() {
+	cd "$srcdir/${pkgname%-git}"
+  mkdir build
+  arch-meson build
+}
+
+package() {
+	cd "$srcdir/${pkgname%-git}"
+  DESTDIR="$pkgdir" ninja -C build install
+}

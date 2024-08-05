@@ -15,6 +15,7 @@ source=("battyicon.service"
         "tint2.service"
         "user-graphical.target"
         "volumeicon.service"
+        "waybar.service"
         "wolumeicon.service")
 md5sums=('3e579c6bbe67bf82a20340e67827a5af'
          '49966dbd8aa92702afb0768387eace91'
@@ -26,6 +27,7 @@ md5sums=('3e579c6bbe67bf82a20340e67827a5af'
          '6256080fae896de81298f741681cb861'
          '6c9051cad2af57064b731071995472ae'
          '6d139a3a87ed92f1d49b1552afc5caf2'
+         'bd2a59329fab26d9a8fc0d7d66ae5724'
          '8748f58d34362564ddc3a96c87ddbe47')
 
 package() {

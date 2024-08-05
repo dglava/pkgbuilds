@@ -12,10 +12,11 @@ source=("battyicon.service"
         "nitrogen.service"
         "orcsome.service"
         "picom.service"
+        "swaybg.service"
         "tint2.service"
         "user-graphical.target"
         "volumeicon.service"
-        "waybar.service"
+        "waybar-own.service"
         "wolumeicon.service")
 md5sums=('3e579c6bbe67bf82a20340e67827a5af'
          '49966dbd8aa92702afb0768387eace91'
@@ -24,6 +25,7 @@ md5sums=('3e579c6bbe67bf82a20340e67827a5af'
          '9e8aecf703338aad4b202f41494dc7ec'
          '9491708348b71236cfc907fb6e0aec33'
          '8b0cb188182b24f1d4335d91fd8cabaf'
+         'e71e0a0315923be781ea001716180782'
          '6256080fae896de81298f741681cb861'
          '6c9051cad2af57064b731071995472ae'
          '6d139a3a87ed92f1d49b1552afc5caf2'

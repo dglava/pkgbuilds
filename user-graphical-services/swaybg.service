@@ -1,0 +1,10 @@
+[Unit]
+Description=Wallpaper setter
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/swaybg -i ~/Pictures/pozadine/poz
+RemainAfterExit=True
+
+[Install]
+WantedBy=user-graphical.target

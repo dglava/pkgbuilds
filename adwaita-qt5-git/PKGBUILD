@@ -1,0 +1,30 @@
+pkgname=adwaita-qt5-git
+pkgver=r470.0a77436
+pkgrel=1
+pkgdesc="A style to bend Qt5 applications to look like they belong into GNOME Shell"
+arch=("any")
+url="https://github.com/FedoraQt/adwaita-qt"
+license=('GPL-2.0 AND LGPL-2.0')
+depends=('qt5-x11extras' 'qt5-base')
+makedepends=('cmake')
+conflicts=('adwaita-qt5')
+source=("git+https://github.com/FedoraQt/adwaita-qt.git")
+sha256sums=(SKIP)
+
+pkgver() {
+  cd "$srcdir/${pkgname%5-git}"
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+build() {
+  cd "$srcdir/${pkgname%5-git}"
+  mkdir build
+  cmake -B build -DCMAKE_INSTALL_PREFIX=/usr -DUSE_QT6=OFF
+  cd build
+  make
+}
+
+package() {
+  cd "$srcdir/${pkgname%5-git}/build/"
+  make DESTDIR=$pkgdir install
+}

@@ -1,0 +1,11 @@
+[Unit]
+Description=Network tray icon
+Requires=tint2.service NetworkManager.service
+After=tint2.service NetworkManager.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/nm-applet
+
+[Install]
+WantedBy=user-graphical.target

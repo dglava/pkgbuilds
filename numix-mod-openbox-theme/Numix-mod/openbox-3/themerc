@@ -19,7 +19,7 @@ menu.items.text.color: #dcdcdc
 menu.items.disabled.text.color: #888888
 
 menu.items.active.bg: flat solid
-menu.items.active.bg.color: #6699cc
+menu.items.active.bg.color: ##3584e4
 menu.items.active.text.color: #f9f9f9
 
 menu.separator.color: #262626

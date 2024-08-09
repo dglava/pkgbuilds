@@ -10,6 +10,7 @@ source=("battyicon.service"
         "mpdas.service"
         "mpd-custom.service"
         "nitrogen.service"
+        "nm-applet.service"
         "orcsome.service"
         "picom.service"
         "swaybg.service"
@@ -23,6 +24,7 @@ md5sums=('3e579c6bbe67bf82a20340e67827a5af'
          '6c426716f334a7bbd7b933187ef20e13'
          'c174c9419be604b4381fde7273513004'
          '9e8aecf703338aad4b202f41494dc7ec'
+         'a07730d2b5d675814d7b5bcc377cd46a'
          '9491708348b71236cfc907fb6e0aec33'
          '8b0cb188182b24f1d4335d91fd8cabaf'
          'e71e0a0315923be781ea001716180782'

@@ -1,12 +1,13 @@
 pkgname=nomacs-git
-pkgver=3.2.0.r1557.g623d6033
+pkgver=3.2.0.r1625.g771ebe98
 pkgrel=1
 pkgdesc="A QT image viewer"
 arch=("x86_64")
 url="http://www.nomacs.org/"
 license=('GPL3')
 conflicts=('nomacs')
-depends=('qt6' 'qt6-svg' 'exiv2' 'libraw' 'opencv' 'desktop-file-utils')
+depends=('qt6-base' 'qt6-imageformats' 'qt6-svg' 'exiv2'
+         'libraw' 'opencv' 'desktop-file-utils')
 makedepends=("cmake" "qt6-tools" "git")
 source=("git+https://github.com/nomacs/nomacs.git")
 md5sums=('SKIP')
@@ -20,7 +21,7 @@ build() {
   cd "${pkgname%-git}/ImageLounge"
   mkdir "build"
   cd "build"
-  cmake .. -DCMAKE_INSTALL_PREFIX=/usr -DENABLE_PLUGINS=OFF -DENABLE_QUAZIP=OFF
+  cmake .. -DCMAKE_INSTALL_PREFIX=/usr -DENABLE_PLUGINS=OFF -DENABLE_QUAZIP=OFF -DENABLE_TESTING=OFF -DENABLE_TIFF=OFF -DENABLE_RAW=OFF
   make
 }
 

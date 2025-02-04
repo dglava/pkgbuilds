@@ -1,0 +1,25 @@
+pkgname=remote-touchpad
+pkgver=1.4.8
+pkgrel=1
+pkgdesc="Control mouse and keyboard from a smartphone "
+arch=('any')
+url="https://github.com/Unrud/remote-touchpad"
+license=('GPL-3.0-only')
+makedepends=('go')
+source=("https://github.com/Unrud/remote-touchpad/archive/refs/tags/v"${pkgver}".tar.gz"
+        "remote-touchpad.service")
+sha256sums=('a6f8a4f61ba7dc0f0cbd64545b0ed07952f51d50851caaa5a6c55f00c46e5b82'
+            '07c8c3cea2c0903cd0b978a86521f63a4c9ce809237c42c9a17e98cc41811353')
+
+build() {
+	cd "${pkgname}-${pkgver}"
+  mkdir build
+  go build -tags portal,uinput,x11 -o build .
+}
+
+package() {
+	cd ${srcdir}
+  install -Dm755 "${pkgname}-${pkgver}/build/remote-touchpad" "${pkgdir}"/usr/bin/${pkgname}
+  mkdir -p "${pkgdir}"/usr/lib/systemd/user
+  install -Dm644 remote-touchpad.service "${pkgdir}"/usr/lib/systemd/user/
+}

@@ -16,23 +16,23 @@ source=("battyicon.service"
         "swaybg.service"
         "tint2.service"
         "user-graphical.target"
-        "volumeicon.service"
-        "waybar-own.service"
-        "wolumeicon.service")
-md5sums=('3e579c6bbe67bf82a20340e67827a5af'
-         '49966dbd8aa92702afb0768387eace91'
+        "waybar-custom.service"
+        "wolumeicon.service"
+        "xfce4-panel.service")
+md5sums=('cf1f04b45313a54b6e445f7bf1a066d9'
+         '10b65ddd8f754299f1c835feaede89de'
          '6c426716f334a7bbd7b933187ef20e13'
          'c174c9419be604b4381fde7273513004'
          '9e8aecf703338aad4b202f41494dc7ec'
-         'a07730d2b5d675814d7b5bcc377cd46a'
+         '84ac24a49f5055cad46114c50f7b32dd'
          '9491708348b71236cfc907fb6e0aec33'
          '8b0cb188182b24f1d4335d91fd8cabaf'
-         'e71e0a0315923be781ea001716180782'
-         '6256080fae896de81298f741681cb861'
+         '7e9e1af44447611b6bbb5f013e79bfe1'
+         'd7d3316ffb6824e650acc36fe203476a'
          '6c9051cad2af57064b731071995472ae'
-         '6d139a3a87ed92f1d49b1552afc5caf2'
-         'bd2a59329fab26d9a8fc0d7d66ae5724'
-         '8748f58d34362564ddc3a96c87ddbe47')
+         'c3118335d2944163a637a483ca7b0ff9'
+         '9b5116b8e174a79c2949ed68518771bc'
+         '489cbf28e7d6b8a8f1a6f00737fcc9f1')
 
 package() {
   cd "$srcdir"

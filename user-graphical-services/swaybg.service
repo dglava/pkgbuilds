@@ -2,10 +2,9 @@
 Description=Wallpaper setter
 
 [Service]
-Type=oneshot
+Type=simple
 EnvironmentFile=%h/.config/swaybg/config
 ExecStart=/usr/bin/swaybg -i "$background"
-RemainAfterExit=True
 
 [Install]
 WantedBy=user-graphical.target

@@ -1,7 +1,7 @@
 [Unit]
 Description=Battery tray icon
-Requires=tint2.service
-After=tint2.service
+Requires=panel.service
+After=panel.service
 
 [Service]
 Type=simple

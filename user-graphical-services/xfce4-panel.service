@@ -1,0 +1,11 @@
+[Unit]
+Description=Xfce4 Panel
+Conflicts=waybar-custom.service tint2.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/xfce4-panel
+
+[Install]
+Alias=panel.service
+WantedBy=user-graphical.target

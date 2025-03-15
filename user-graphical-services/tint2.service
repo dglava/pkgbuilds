@@ -1,9 +1,11 @@
 [Unit]
 Description=Tint2 taskbar
+Conflicts=waybar-custom.service xfce4-panel.service
 
 [Service]
 Type=simple
 ExecStart=/usr/bin/tint2
 
 [Install]
+Alias=panel.service
 WantedBy=user-graphical.target

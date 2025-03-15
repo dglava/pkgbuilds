@@ -1,9 +1,11 @@
 [Unit]
 Description=Waybar taskbar
+Conflicts=xfce4-panel.service tint2.service
 
 [Service]
 Type=simple
 ExecStart=/usr/bin/waybar
 
 [Install]
+Alias=panel.service
 WantedBy=user-graphical.target

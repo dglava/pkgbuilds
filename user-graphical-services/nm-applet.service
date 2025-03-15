@@ -1,7 +1,7 @@
 [Unit]
 Description=Network tray icon
-Requires=tint2.service NetworkManager.service
-After=tint2.service NetworkManager.service
+Requires=panel.service
+After=panel.service
 
 [Service]
 Type=simple

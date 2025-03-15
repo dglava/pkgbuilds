@@ -3,7 +3,8 @@ Description=Wallpaper setter
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/swaybg -i ~/Pictures/pozadine/poz
+EnvironmentFile=%h/.config/swaybg/config
+ExecStart=/usr/bin/swaybg -i "$background"
 RemainAfterExit=True
 
 [Install]

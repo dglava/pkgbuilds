@@ -4,7 +4,7 @@ Description=Wallpaper setter for X
 [Service]
 Type=simple
 EnvironmentFile=%h/.config/xwallpaper/config
-ExecStart=/usr/bin/xwallpaper --daemon --center "$background"
+ExecStart=/usr/bin/xwallpaper --center "$background"
 
 [Install]
 WantedBy=user-graphical.target

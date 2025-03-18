@@ -9,7 +9,6 @@ source=("battyicon.service"
         "cbatticon.service"
         "mpdas.service"
         "mpd-custom.service"
-        "nitrogen.service"
         "nm-applet.service"
         "orcsome.service"
         "picom.service"
@@ -18,21 +17,22 @@ source=("battyicon.service"
         "user-graphical.target"
         "waybar-custom.service"
         "wolumeicon.service"
-        "xfce4-panel.service")
+        "xfce4-panel.service"
+        "xwallpaper.service")
 md5sums=('cf1f04b45313a54b6e445f7bf1a066d9'
          '10b65ddd8f754299f1c835feaede89de'
          '6c426716f334a7bbd7b933187ef20e13'
          'c174c9419be604b4381fde7273513004'
-         '9e8aecf703338aad4b202f41494dc7ec'
          '84ac24a49f5055cad46114c50f7b32dd'
          '9491708348b71236cfc907fb6e0aec33'
          '8b0cb188182b24f1d4335d91fd8cabaf'
-         '7e9e1af44447611b6bbb5f013e79bfe1'
+         '8e89b77c640ee4800de1937be5594493'
          'd7d3316ffb6824e650acc36fe203476a'
          '6c9051cad2af57064b731071995472ae'
          'c3118335d2944163a637a483ca7b0ff9'
          '9b5116b8e174a79c2949ed68518771bc'
-         '489cbf28e7d6b8a8f1a6f00737fcc9f1')
+         '489cbf28e7d6b8a8f1a6f00737fcc9f1'
+         'f6e9f5bfca562b0162420484c554881a')
 
 package() {
   cd "$srcdir"

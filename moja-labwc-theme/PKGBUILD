@@ -7,7 +7,6 @@ license=('GPL3')
 
 package() {
   install -d -m755 "$pkgdir/usr/share/themes/"
-
   cd ..
   cp -r Moja "$pkgdir/usr/share/themes/"
 }

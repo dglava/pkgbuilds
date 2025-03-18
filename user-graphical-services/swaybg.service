@@ -1,5 +1,5 @@
 [Unit]
-Description=Wallpaper setter
+Description=Wallpaper setter for Wayland
 
 [Service]
 Type=simple

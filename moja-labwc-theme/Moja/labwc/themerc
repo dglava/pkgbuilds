@@ -17,12 +17,12 @@ window.inactive.title.bg.color: #424242
 # window titlebar text
 window.active.label.text.color: #dcdcdc
 window.inactive.label.text.color: #888888
-window.label.text.justify: center
+window.label.text.justify: left
 
 # window button width and spacing
-window.button.width: 26
-window.button.height: 26
-window.button.spacing: 0
+window.button.width: 28
+window.button.height: 28
+window.button.spacing: 2
 
 # window button hover effect
 window.button.hover.bg.corner-radius: 0
@@ -43,7 +43,7 @@ menu.overlap.y: 0
 menu.width.min: 20
 menu.width.max: 200
 menu.border.width: 1
-menu.border.color: #aaaaaa
+menu.border.color: #424242
 menu.items.bg.color: #424242
 menu.items.text.color: #dcdcdc
 menu.items.active.bg.color: #6699cc

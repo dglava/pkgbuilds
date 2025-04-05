@@ -1,5 +1,5 @@
 pkgname=adw-gtk3
-pkgver=r475.4963032
+pkgver=r497.f3ba1d7
 pkgrel=1
 pkgdesc="The theme from libadwaita ported to GTK-3"
 arch=('any')

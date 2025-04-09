@@ -22,7 +22,7 @@ window.label.text.justify: left
 # window button width and spacing
 window.button.width: 28
 window.button.height: 28
-window.button.spacing: 2
+window.button.spacing: 4
 
 # window button hover effect
 window.button.hover.bg.corner-radius: 0

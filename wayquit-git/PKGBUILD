@@ -1,0 +1,24 @@
+pkgname=wayquit-git
+pkgver=1
+pkgrel=1
+pkgdesc="Shutdown/reboot/logout utility script"
+arch=('any')
+url="https://github.com/dglava/wayquit"
+license=('GPL-3.0-or-later')
+depends=('python' 'gtk4' 'python-gobject')
+makedepends=('git' 'python-setuptools' 'python-installer' 'python-build')
+source=('git+https://github.com/dglava/wayquit.git')
+sha1sums=('SKIP')
+
+build() {
+  cd "$srcdir/${pkgname%-git}"
+  python -m build
+}
+
+package() {
+  cd "$srcdir/${pkgname%-git}/dist"
+  python -m installer -d $pkgdir *.whl
+
+  cd "$srcdir/${pkgname%-git}"
+	install -Dm644 "data/wayquit.conf" "$pkgdir/etc/wayquit.conf"
+}

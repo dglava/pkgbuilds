@@ -20,5 +20,5 @@ package() {
   python -m installer -d $pkgdir *.whl
 
   cd "$srcdir/${pkgname%-git}"
-	install -Dm644 "data/wayquit.conf" "$pkgdir/etc/wayquit.conf"
+  install -Dm644 "data/wayquit.conf" "$pkgdir/etc/wayquit.conf"
 }

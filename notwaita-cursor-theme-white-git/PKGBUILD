@@ -1,0 +1,23 @@
+pkgname=notwaita-cursor-theme-white-git
+pkgver=r3.fefc86d
+pkgrel=1
+pkgdesc="A Cursor theme based off of Adwaita Cursors"
+arch=('any')
+url="https://gitlab.com/donut2/notwaita-cursor-theme"
+license=('CC-BY-SA-3.0')
+source=('git+https://gitlab.com/donut2/notwaita-cursor-theme.git')
+sha1sums=('SKIP')
+
+pkgver() {
+  cd "${pkgname%-white-git}"
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short=7 HEAD)"
+}
+
+package() {
+  cd "$srcdir/${pkgname%-white-git}"
+  install -d $pkgdir/usr/share/icons
+  # install just the white icons
+  cp -r "$srcdir/${pkgname%-white-git}/Notwaita White Cursors/Notwaita-White" "$pkgdir/usr/share/icons"
+  # remove cache file
+  rm "$pkgdir/usr/share/icons/Notwaita-White/.icon-theme.cache"
+}

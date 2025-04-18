@@ -1,0 +1,21 @@
+pkgname=orchis-gtk-theme-git
+pkgver=r663.452fdf03
+pkgrel=1
+pkgdesc="A Material theme for GNOME/GTK based desktop environments - custom options"
+arch=('any')
+url="https://github.com/vinceliuice/Orchis-theme"
+license=('GPL-3.0-only')
+makedepends=('git' 'sassc')
+source=('git+https://github.com/vinceliuice/Orchis-theme.git')
+sha256sums=('SKIP')
+
+pkgver() {
+	cd "$srcdir/Orchis-theme"
+	printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+package() {
+	cd "$srcdir/Orchis-theme"
+  install -dm755 "$pkgdir/usr/share/themes"
+  ./install.sh -f --tweaks solid primary --round 2px --dest "$pkgdir/usr/share/themes"
+}

@@ -1,5 +1,5 @@
 pkgname=marwaita-gtk-theme-mod-git
-pkgver=r148.e49c518
+pkgver=r149.4184526
 pkgrel=1
 pkgdesc="GTK theme for Budgie desktop - xfce4-panel tweak"
 arch=('any')

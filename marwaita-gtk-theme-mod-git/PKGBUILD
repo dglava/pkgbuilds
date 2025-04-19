@@ -9,12 +9,12 @@ source=('git+https://github.com/darkomarko42/Marwaita.git')
 sha256sums=('SKIP')
 
 pkgver() {
-	cd "$srcdir"
-	printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+  cd "$srcdir"
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
 }
 
 package() {
-	cd "$srcdir"
+  cd "$srcdir"
 
   # make xfce4-panel text not bold and reduce the padding
   sed -i 's|\.xfce4-panel\.background button label { padding-left: 6px; padding-right: 6px; }|.xfce4-panel.background button label { font-weight: normal; padding-left: 2px; padding-right: 2px; }|' "Marwaita/Marwaita/general/widgets.css"

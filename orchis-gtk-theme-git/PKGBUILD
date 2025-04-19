@@ -10,12 +10,12 @@ source=('git+https://github.com/vinceliuice/Orchis-theme.git')
 sha256sums=('SKIP')
 
 pkgver() {
-	cd "$srcdir/Orchis-theme"
-	printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+  cd "$srcdir/Orchis-theme"
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
 }
 
 package() {
-	cd "$srcdir/Orchis-theme"
+  cd "$srcdir/Orchis-theme"
   install -dm755 "$pkgdir/usr/share/themes"
   ./install.sh -f --tweaks solid primary --round 2px --dest "$pkgdir/usr/share/themes"
 }

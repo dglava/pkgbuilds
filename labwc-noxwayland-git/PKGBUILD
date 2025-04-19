@@ -6,26 +6,26 @@ arch=('x86_64')
 url="https://github.com/johanmalm/labwc"
 license=('GPL-2.0-only')
 depends=('wlroots' 'cairo' 'pango' 'libxml2' 'glib2' 'libinput'
-				 'libxkbcommon' 'wayland' 'scdoc')
+         'libxkbcommon' 'wayland' 'scdoc')
 makedepends=('meson' 'git' 'wayland-protocols')
 conflicts=('labwc' 'labwc-noxwayland')
 source=('git+https://github.com/labwc/labwc.git')
 sha1sums=('SKIP')
 
 pkgver() {
-	cd ${pkgname%-noxwayland-git}
+  cd ${pkgname%-noxwayland-git}
   printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
 }
 
 build() {
   ls
-	cd "${srcdir}"/"${pkgname%-noxwayland-git}"
+  cd "${srcdir}"/"${pkgname%-noxwayland-git}"
   arch-meson -Dxwayland=disabled build
   meson compile -C build
 }
 
 package() {
   ls
-	cd "${srcdir}"/"${pkgname%-noxwayland-git}"
+  cd "${srcdir}"/"${pkgname%-noxwayland-git}"
   meson install -C build --destdir "${pkgdir}"
 }

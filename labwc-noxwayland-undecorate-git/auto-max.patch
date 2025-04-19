@@ -1,0 +1,53 @@
+diff --git a/include/view.h b/include/view.h
+index 0ff42c85..43a4d4f0 100644
+--- a/include/view.h
++++ b/include/view.h
+@@ -209,6 +209,9 @@ struct view {
+ 	bool inhibits_keybinds;
+ 	xkb_layout_index_t keyboard_layout;
+ 
++	bool saved_ssd_enabled;
++	bool saved_decoration_state_valid;
++
+ 	/* Pointer to an output owned struct region, may be NULL */
+ 	struct region *tiled_region;
+ 	/* Set to region->name when tiled_region is free'd by a destroying output */
+diff --git a/src/view.c b/src/view.c
+index e17a883c..1e86e3e3 100644
+--- a/src/view.c
++++ b/src/view.c
+@@ -1265,7 +1265,15 @@ view_apply_maximized_geometry(struct view *view)
+ {
+ 	assert(view);
+ 	assert(view->maximized != VIEW_AXIS_NONE);
++
++    if (!view->saved_decoration_state_valid) {
++        view->saved_ssd_enabled = view->ssd_enabled;
++        view->saved_decoration_state_valid = true;
++    }
++
++	view->ssd_enabled = false;
+ 	struct output *output = view->output;
++
+ 	assert(output_is_usable(output));
+ 
+ 	struct wlr_box box = output_usable_area_in_layout_coords(output);
+@@ -1365,6 +1373,10 @@ view_restore_to(struct view *view, struct wlr_box geometry)
+ 		return;
+ 	}
+ 	if (view->maximized != VIEW_AXIS_NONE) {
++		if (view->saved_decoration_state_valid) {
++					view->ssd_enabled = view->saved_ssd_enabled;
++					view->saved_decoration_state_valid = false;
++				}
+ 		set_maximized(view, VIEW_AXIS_NONE);
+ 	}
+ 	view_move_resize(view, geometry);
+@@ -2492,6 +2504,7 @@ void
+ view_init(struct view *view)
+ {
+ 	assert(view);
++	view->saved_decoration_state_valid = false;
+ 
+ 	wl_signal_init(&view->events.new_app_id);
+ 	wl_signal_init(&view->events.new_title);

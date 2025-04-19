@@ -1,0 +1,12 @@
+pkgname="marwaita-labwc-theme"
+pkgver=1
+pkgrel=1
+pkgdesc="Marwaita Labwc theme based on the Gtk theme"
+arch=('any')
+license=('GPL-3.0-only')
+
+package() {
+  install -d -m755 "$pkgdir/usr/share/themes/"
+  cd ..
+  cp -r Marwaita-labwc "$pkgdir/usr/share/themes/"
+}

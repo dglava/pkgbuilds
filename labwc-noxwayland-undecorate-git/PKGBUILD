@@ -1,7 +1,7 @@
-pkgname=labwc-noxwayland-git
+pkgname=labwc-noxwayland-undecorate-git
 pkgver=r2871.34a07829
 pkgrel=1
-pkgdesc="Stacking Wayland compositor - without Xwayland, latest master branch"
+pkgdesc="Stacking Wayland compositor - no Xwayland, auto undecorate maximized windows"
 arch=('x86_64')
 url="https://github.com/johanmalm/labwc"
 license=('GPL-2.0-only')
@@ -9,17 +9,28 @@ depends=('wlroots' 'cairo' 'pango' 'libxml2' 'glib2' 'libinput'
 				 'libxkbcommon' 'wayland' 'scdoc')
 makedepends=('meson' 'git' 'wayland-protocols')
 conflicts=('labwc' 'labwc-noxwayland')
-source=('git+https://github.com/labwc/labwc.git')
-sha1sums=('SKIP')
+source=('git+https://github.com/labwc/labwc.git'
+        'auto-max.patch')
+sha1sums=('SKIP'
+          '383c400dff5d4686534e6ec94900eae04e413039')
 
 pkgver() {
 	cd ${pkgname%-noxwayland-git}
   printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
 }
 
+prepare() {
+	cd ${pkgname%-noxwayland-git}
+  # maximized windows get automatically undecorated, saving some
+  # vertical space and looking nicer, since the panel displays the
+  # window names anyway
+  git apply $srcdir/auto-max.patch
+}
+
 build() {
   ls
 	cd "${srcdir}"/"${pkgname%-noxwayland-git}"
+  export PKG_CONFIG_PATH='/usr/lib/wlroots0.16/pkgconfig'
   arch-meson -Dxwayland=disabled build
   meson compile -C build
 }

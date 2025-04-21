@@ -1,25 +1,38 @@
+# Copyright 2025 Dino Duratović
+#
+# This program is free software: you can redistribute it and/or modify it
+# under the terms of the GNU General Public License as published by the
+# Free Software Foundation, either version 3 of the License, or (at your option)
+# any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+# or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License
+# for more details.
+#
+# You should have received a copy of the GNU General Public License along
+# with this program. If not, see <https://www.gnu.org/licenses/>.
+
+# Window button icons, modified from the original: "iconship" by Giovanna from https://www.figma.com/community/file/1045783139673590628/iconship-icon-pack-demo-version
+# Licensed under CC BY 4.0: https://creativecommons.org/licenses/by/4.0/
+
 border.width: 1
 
-window.titlebar.padding.width: 0
-window.titlebar.padding.height: 0
+window.titlebar.padding.width: 2
+window.titlebar.padding.height: 2
 
-# window border
-window.active.border.color: #484848
-window.inactive.border.color: #484848
+window.active.border.color: #353535
+window.inactive.border.color: #353535
 
-# ToggleKeybinds status indicator
 window.active.indicator.toggled-keybind.color: #ff0000
 
-# window titlebar background
-window.active.title.bg.color: #424242
-window.inactive.title.bg.color: #424242
+window.active.title.bg.color: #353535
+window.inactive.title.bg.color: #353535
 
-# window titlebar text
 window.active.label.text.color: #dcdcdc
 window.inactive.label.text.color: #888888
 window.label.text.justify: left
 
-# window button width and spacing
 window.button.width: 28
 window.button.height: 28
 window.button.spacing: 4
@@ -43,10 +56,10 @@ menu.overlap.y: 0
 menu.width.min: 20
 menu.width.max: 200
 menu.border.width: 1
-menu.border.color: #424242
-menu.items.bg.color: #424242
+menu.border.color: #353535
+menu.items.bg.color: #353535
 menu.items.text.color: #dcdcdc
-menu.items.active.bg.color: #6699cc
+menu.items.active.bg.color: #3584e4
 menu.items.active.text.color: #f9f9f9
 menu.items.padding.x: 4
 menu.items.padding.y: 4
@@ -54,11 +67,11 @@ menu.separator.width: 1
 menu.separator.padding.width: 4
 menu.separator.padding.height: 4
 menu.separator.color: #888888
-menu.title.bg.color: #00ff00
-menu.title.text.color: #ff00ff
+menu.title.bg.color: #3584e4
+menu.title.text.color: #dcdcdc
 menu.title.text.justify: Center
 
-osd.bg.color: #424242
+osd.bg.color: #353535
 osd.border.color: #888888
 osd.border.width: 1
 osd.label.text.color: #dcdcdc

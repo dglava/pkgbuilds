@@ -1,3 +1,21 @@
+# Copyright 2025 Dino Duratović
+#
+# This program is free software: you can redistribute it and/or modify it
+# under the terms of the GNU General Public License as published by the
+# Free Software Foundation, either version 3 of the License, or (at your option)
+# any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+# or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License
+# for more details.
+#
+# You should have received a copy of the GNU General Public License along
+# with this program. If not, see <https://www.gnu.org/licenses/>.
+
+# Window button icons, modified from the original: "iconship" by Giovanna from https://www.figma.com/community/file/1045783139673590628/iconship-icon-pack-demo-version
+# Licensed under CC BY 4.0: https://creativecommons.org/licenses/by/4.0/
+
 border.width: 1
 
 window.titlebar.padding.width: 2
@@ -46,7 +64,7 @@ menu.separator.padding.width: 4
 menu.separator.padding.height: 4
 menu.separator.color: #888888
 menu.title.bg.color: #0f6ee3
-menu.title.text.color: #ffffff
+menu.title.text.color: #262626
 menu.title.text.justify: Center
 
 osd.bg.color: #262626

@@ -1,8 +1,7 @@
-diff --git a/include/view.h b/include/view.h
-index 0ff42c85..43a4d4f0 100644
---- a/include/view.h
-+++ b/include/view.h
-@@ -209,6 +209,9 @@ struct view {
+diff '--color=auto' -u -ruN labwc.old/include/view.h labwc.new/include/view.h
+--- labwc.old/include/view.h	2025-04-21 08:57:29.000000000 +0200
++++ labwc.new/include/view.h	2025-04-21 11:39:17.201785016 +0200
+@@ -209,6 +209,9 @@
  	bool inhibits_keybinds;
  	xkb_layout_index_t keyboard_layout;
  
@@ -12,11 +11,10 @@ index 0ff42c85..43a4d4f0 100644
  	/* Pointer to an output owned struct region, may be NULL */
  	struct region *tiled_region;
  	/* Set to region->name when tiled_region is free'd by a destroying output */
-diff --git a/src/view.c b/src/view.c
-index e17a883c..1e86e3e3 100644
---- a/src/view.c
-+++ b/src/view.c
-@@ -1265,7 +1265,15 @@ view_apply_maximized_geometry(struct view *view)
+diff '--color=auto' -u -ruN labwc.old/src/view.c labwc.new/src/view.c
+--- labwc.old/src/view.c	2025-04-21 08:57:29.000000000 +0200
++++ labwc.new/src/view.c	2025-04-21 11:39:17.201785016 +0200
+@@ -1265,7 +1265,15 @@
  {
  	assert(view);
  	assert(view->maximized != VIEW_AXIS_NONE);
@@ -32,7 +30,7 @@ index e17a883c..1e86e3e3 100644
  	assert(output_is_usable(output));
  
  	struct wlr_box box = output_usable_area_in_layout_coords(output);
-@@ -1365,6 +1373,10 @@ view_restore_to(struct view *view, struct wlr_box geometry)
+@@ -1365,6 +1373,10 @@
  		return;
  	}
  	if (view->maximized != VIEW_AXIS_NONE) {
@@ -43,7 +41,7 @@ index e17a883c..1e86e3e3 100644
  		set_maximized(view, VIEW_AXIS_NONE);
  	}
  	view_move_resize(view, geometry);
-@@ -2492,6 +2504,7 @@ void
+@@ -2492,6 +2504,7 @@
  view_init(struct view *view)
  {
  	assert(view);

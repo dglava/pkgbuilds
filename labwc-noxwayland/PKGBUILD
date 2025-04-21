@@ -8,7 +8,7 @@ license=('GPL-2.0-only')
 depends=('wlroots' 'cairo' 'pango' 'libxml2' 'glib2' 'libinput'
          'libxkbcommon' 'wayland' 'scdoc' 'libpng' 'librsvg' 'libsfdo')
 makedepends=('meson' 'git' 'ninja' 'wayland-protocols')
-conflicts=('labwc' 'labwc-git' 'labwc-noxwayland-git')
+conflicts=('labwc' 'labwc-noxwayland-git' 'labwc-noxwayland-undecorate-git')
 source=("https://github.com/labwc/labwc/archive/refs/tags/${pkgver}.tar.gz")
 sha256sums=('746be2ff2d0c0c0b795c97fa24c7058f75586685c88a1194c243b6a846f938a5')
 

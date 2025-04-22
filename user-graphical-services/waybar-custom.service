@@ -1,6 +1,7 @@
 [Unit]
 Description=Waybar taskbar
 Conflicts=xfce4-panel.service tint2.service
+PartOf=user-graphical.target
 
 [Service]
 Type=simple

@@ -2,6 +2,7 @@
 Description=MPD scrobbler
 Requires=mpd-custom.service
 After=mpd-custom.service
+PartOf=user-graphical.target
 
 [Service]
 Type=simple

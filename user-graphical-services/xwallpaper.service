@@ -1,5 +1,6 @@
 [Unit]
 Description=Wallpaper setter for X
+PartOf=user-graphical.target
 
 [Service]
 Type=simple

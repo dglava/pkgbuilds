@@ -28,11 +28,11 @@ md5sums=('cf1f04b45313a54b6e445f7bf1a066d9'
          '8b0cb188182b24f1d4335d91fd8cabaf'
          '8e89b77c640ee4800de1937be5594493'
          'd7d3316ffb6824e650acc36fe203476a'
-         '6c9051cad2af57064b731071995472ae'
+         '102b53f99ffe71ed9c3b02d60fe038ee'
          'c3118335d2944163a637a483ca7b0ff9'
          '9b5116b8e174a79c2949ed68518771bc'
          '489cbf28e7d6b8a8f1a6f00737fcc9f1'
-         'f6e9f5bfca562b0162420484c554881a')
+         'ecbd4f5796e9c75df3ce211aee31e95d')
 
 package() {
   cd "$srcdir"

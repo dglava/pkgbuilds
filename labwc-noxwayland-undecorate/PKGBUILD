@@ -1,5 +1,5 @@
-pkgname=labwc-noxwayland-undecorate-git
-pkgver=r2888.cb581569
+pkgname=labwc-noxwayland-undecorate
+pkgver=0.8.4
 pkgrel=1
 pkgdesc="Stacking Wayland compositor - no Xwayland, auto undecorate maximized windows"
 arch=('x86_64')
@@ -8,32 +8,27 @@ license=('GPL-2.0-only')
 depends=('wlroots' 'cairo' 'pango' 'libxml2' 'glib2' 'libinput'
          'libxkbcommon' 'wayland' 'scdoc' 'libpng' 'librsvg' 'libsfdo')
 makedepends=('meson' 'git' 'wayland-protocols')
-conflicts=('labwc' 'labwc-noxwayland' 'labwc-noxwayland-git' 'labwc-noxwayland-undecorate')
-source=('git+https://github.com/labwc/labwc.git'
-        'undecorate.patch')
-sha1sums=('SKIP'
-          '2837e0f9ed39ba1d28f0c4e8628493522757be81')
-
-pkgver() {
-  cd ${pkgname%-noxwayland-undecorate-git}
-  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
-}
+conflicts=('labwc' 'labwc-noxwayland' 'labwc-noxwayland-git' 'labwc-noxwayland-undecorate-git')
+source=('https://github.com/labwc/labwc/archive/refs/tags/0.8.4.tar.gz'
+        'undecorate-0.8.4.patch')
+sha1sums=('dc5921afd5da328a37eddbda9641bc38d17ab83a'
+          'e7828b4ddf3929e12cf4f399f54661c08c5fb194')
 
 prepare() {
-  cd ${pkgname%-noxwayland-undecorate-git}
+  cd ${srcdir}/${pkgname%-noxwayland-undecorate}-${pkgver}
   # maximized windows get automatically undecorated, saving some
   # vertical space and looking nicer, since the panel displays the
   # window names anyway
-  patch -p1 < $srcdir/undecorate.patch
+  patch -p1 < $srcdir/"undecorate-0.8.4.patch"
 }
 
 build() {
-  cd "${srcdir}"/"${pkgname%-noxwayland-undecorate-git}"
+  cd ${srcdir}/${pkgname%-noxwayland-undecorate}-${pkgver}
   arch-meson -Dxwayland=disabled build
   meson compile -C build
 }
 
 package() {
-  cd "${srcdir}"/"${pkgname%-noxwayland-undecorate-git}"
+  cd ${srcdir}/${pkgname%-noxwayland-undecorate}-${pkgver}
   meson install -C build --destdir "${pkgdir}"
 }

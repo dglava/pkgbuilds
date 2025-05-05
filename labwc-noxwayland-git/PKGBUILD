@@ -18,14 +18,12 @@ pkgver() {
 }
 
 build() {
-  ls
   cd "${srcdir}"/"${pkgname%-noxwayland-git}"
   arch-meson -Dxwayland=disabled build
   meson compile -C build
 }
 
 package() {
-  ls
   cd "${srcdir}"/"${pkgname%-noxwayland-git}"
   meson install -C build --destdir "${pkgdir}"
 }

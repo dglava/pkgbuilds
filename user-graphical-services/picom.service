@@ -1,6 +1,7 @@
 [Unit]
 Description=Desktop compositor
 PartOf=user-graphical.target
+BindsTo=user-graphical.target
 
 [Service]
 Type=simple

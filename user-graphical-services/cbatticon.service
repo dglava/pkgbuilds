@@ -3,6 +3,7 @@ Description=Battery tray icon
 Requires=panel.service
 After=panel.service
 PartOf=user-graphical.target
+BindsTo=user-graphical.target
 
 [Service]
 Type=simple

@@ -1,0 +1,47 @@
+diff '--color=auto' -u -ruN labwc-0.8.4-old/include/view.h labwc-0.8.4-new/include/view.h
+--- labwc-0.8.4-old/include/view.h	2025-05-02 17:41:57.000000000 +0200
++++ labwc-0.8.4-new/include/view.h	2025-05-05 12:07:28.111984777 +0200
+@@ -207,6 +207,8 @@
+ 	enum view_edge tiled;
+ 	uint32_t edges_visible;  /* enum wlr_edges bitset */
+ 	bool inhibits_keybinds;
++	bool saved_ssd_enabled;
++	bool saved_decoration_state_valid;
+ 	xkb_layout_index_t keyboard_layout;
+ 
+ 	/* Pointer to an output owned struct region, may be NULL */
+diff '--color=auto' -u -ruN labwc-0.8.4-old/src/view.c labwc-0.8.4-new/src/view.c
+--- labwc-0.8.4-old/src/view.c	2025-05-02 17:41:57.000000000 +0200
++++ labwc-0.8.4-new/src/view.c	2025-05-05 12:30:06.629487789 +0200
+@@ -1265,6 +1265,12 @@
+ {
+ 	assert(view);
+ 	assert(view->maximized != VIEW_AXIS_NONE);
++	if (!view->saved_decoration_state_valid) {
++		view->saved_ssd_enabled = view->ssd_enabled;
++		view->saved_decoration_state_valid = true;
++	}
++
++	view->ssd_enabled = false;
+ 	struct output *output = view->output;
+ 	assert(output_is_usable(output));
+ 
+@@ -1365,6 +1371,10 @@
+ 		return;
+ 	}
+ 	if (view->maximized != VIEW_AXIS_NONE) {
++		if (view->saved_decoration_state_valid) {
++				view->ssd_enabled = view->saved_ssd_enabled;
++				view->saved_decoration_state_valid = false;
++			}
+ 		set_maximized(view, VIEW_AXIS_NONE);
+ 	}
+ 	view_move_resize(view, geometry);
+@@ -2503,6 +2513,7 @@
+ view_init(struct view *view)
+ {
+ 	assert(view);
++	view->saved_decoration_state_valid = false;
+ 
+ 	wl_signal_init(&view->events.new_app_id);
+ 	wl_signal_init(&view->events.new_title);

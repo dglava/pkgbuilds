@@ -19,20 +19,20 @@ source=("battyicon.service"
         "wolumeicon.service"
         "xfce4-panel.service"
         "xwallpaper.service")
-md5sums=('46e395674a11a823ec39b7ad2a129068'
-         'd5ee3a842757e72d63ea5d7c5a595dd4'
-         '733a81f2222016ff232b9c3862cb3d11'
-         '15149a331aa5a30a7e5b2b2115103b5b'
-         '1d6d99126a0b2675c41d66a89cae2b55'
-         '14f93b2af81b149207a9fa3d5e847f92'
-         '4ad98bb3b041aaaa9bf3f8b9046a358b'
-         '4eb235ccb4cc091cfae37ce0584a7675'
-         'e705ace2c03cce3cb32ef50f1d3ba18f'
+md5sums=('882ab0aab3f8e9d708bb0462c5046bdb'
+         '08b7126273a26371f1902a3ccc5afae2'
+         '4cdc0241d33fe159841862519755bf60'
+         'e9888e9f1618d531d22c6658bb61b828'
+         '221684fb112527391126e669c3e31344'
+         '2f4c2352cc5777e14dc0159368beb1cb'
+         'ca1cc18a079dc48f5ba42eb8f521bf53'
+         'f5ad870ad55aaea564e4026ae9f61951'
+         '50628d0cda3ece3befbec6dc5c660f95'
          '102b53f99ffe71ed9c3b02d60fe038ee'
-         '6e3aefd5492623233154b792d24fde52'
-         'ce6e20ac80e8e46559de98311aacf115'
-         '07b0d92930b01887ebb6b66ad7d28739'
-         '7f5d4ce411d33c75cd59d67e926981ac')
+         '31a6d4d0bd5cc3b139308932f2510476'
+         'def9aa3df55f8151f7e1f2daf47cc0f9'
+         '93f1ae936cf24d18d006f17f5b8b62e6'
+         '8f16218680881d5d018e0239dafbb8cb')
 
 package() {
   cd "$srcdir"

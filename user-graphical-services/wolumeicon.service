@@ -3,6 +3,7 @@ Description=Volume tray icon
 Requires=panel.service
 After=panel.service pipewire.service
 PartOf=user-graphical.target
+BindsTo=user-graphical.target
 
 [Service]
 Type=simple

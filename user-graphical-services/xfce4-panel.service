@@ -2,6 +2,7 @@
 Description=Xfce4 Panel
 Conflicts=waybar-custom.service tint2.service
 PartOf=user-graphical.target
+BindsTo=user-graphical.target
 
 [Service]
 Type=simple

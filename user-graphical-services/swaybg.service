@@ -1,6 +1,7 @@
 [Unit]
 Description=Wallpaper setter for Wayland
 PartOf=user-graphical.target
+BindsTo=user-graphical.target
 
 [Service]
 Type=simple

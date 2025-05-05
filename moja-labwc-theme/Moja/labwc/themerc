@@ -46,9 +46,9 @@ window.inactive.button.unpressed.image.color: #888888
 
 # window drop-shadows
 window.active.shadow.size: 60
-window.inactive.shadow.size: 40
-window.active.shadow.color: #00000060
-window.inactive.shadow.color: #00000040
+window.inactive.shadow.size: 60
+window.active.shadow.color: #00000080
+window.inactive.shadow.color: #00000060
 
 # menu
 menu.overlap.x: 0
@@ -83,7 +83,7 @@ osd.window-switcher.item.padding.x: 10
 osd.window-switcher.item.padding.y: 1
 osd.window-switcher.item.active.border.width: 2
 osd.window-switcher.preview.border.width: 1
-osd.window-switcher.preview.border.color: #dddda6,#000000,#dddda6
+osd.window-switcher.preview.border.color: #353535,#3584e4,#3584e4
 
 osd.workspace-switcher.boxes.width: 20
 osd.workspace-switcher.boxes.height: 20

@@ -1,0 +1,11 @@
+[Unit]
+Description=Idle manager for Wayland
+PartOf=user-graphical.target
+BindsTo=user-graphical.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/swayidle
+
+[Install]
+WantedBy=user-graphical.target

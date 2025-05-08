@@ -1,0 +1,21 @@
+pkgname=wlopm
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="wlr-output-power-management-v1 client"
+arch=('x86_64')
+url="https://git.sr.ht/~leon_plickat/wlopm"
+license=('GPL-3.0-or-later')
+depends=('wayland')
+source=("https://git.sr.ht/~leon_plickat/wlopm/archive/v${pkgver}.tar.gz")
+sha256sums=('15f31bbd855131943397dded3a26003f2f5056e4c6a1a93d35ff7697b3f1e439')
+
+build() {
+  cd "${pkgname}-v${pkgver}"
+  make
+}
+
+package() {
+  cd "${pkgname}-v${pkgver}"
+  install -d "$pkgdir/usr/share/bash-completion/completions/"
+  make DESTDIR="$pkgdir/" PREFIX="/usr" install
+}

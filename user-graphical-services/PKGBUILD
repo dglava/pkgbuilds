@@ -13,6 +13,7 @@ source=("battyicon.service"
         "orcsome.service"
         "picom.service"
         "swaybg.service"
+        "swayidle.service"
         "tint2.service"
         "user-graphical.target"
         "waybar-custom.service"
@@ -27,6 +28,7 @@ md5sums=('882ab0aab3f8e9d708bb0462c5046bdb'
          '2f4c2352cc5777e14dc0159368beb1cb'
          'ca1cc18a079dc48f5ba42eb8f521bf53'
          'f5ad870ad55aaea564e4026ae9f61951'
+         '95f93a98b8c88da7848e5f4da6228aa4'
          '50628d0cda3ece3befbec6dc5c660f95'
          '102b53f99ffe71ed9c3b02d60fe038ee'
          '31a6d4d0bd5cc3b139308932f2510476'

@@ -5,7 +5,7 @@ pkgdesc="Stacking Wayland compositor - no Xwayland, auto undecorate maximized wi
 arch=('x86_64')
 url="https://github.com/johanmalm/labwc"
 license=('GPL-2.0-only')
-depends=('wlroots' 'cairo' 'pango' 'libxml2' 'glib2' 'libinput'
+depends=('wlroots0.18' 'cairo' 'pango' 'libxml2' 'glib2' 'libinput'
          'libxkbcommon' 'wayland' 'scdoc' 'libpng' 'librsvg' 'libsfdo')
 makedepends=('meson' 'git' 'wayland-protocols')
 conflicts=('labwc' 'labwc-noxwayland' 'labwc-noxwayland-git' 'labwc-noxwayland-undecorate-git')

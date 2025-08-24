@@ -1,13 +1,13 @@
 pkgname=puddletag-git
-pkgver=2.4.0.r10.g1b7b714
+pkgver=2.5.0.r21.g8a1d2ba
 pkgrel=1
 pkgdesc="A tag editor for GNU/Linux"
 arch=('any')
 url="https://github.com/puddletag/puddletag"
 license=('GPL3')
-depends=('python' 'python-pyqt5' 'python-pyparsing' 'python-mutagen'
-         'python-configobj' 'qt5-svg')
-makedepends=('python-setuptools')
+depends=('python' 'python-pyqt6' 'python-configobj' 'python-pyparsing'
+         'python-mutagen' 'python-unidecode')
+makedepends=('git' 'python-setuptools' 'python-installer' 'python-build')
 conflicts=('puddletag')
 source=("git+https://github.com/puddletag/puddletag")
 md5sums=('SKIP')
@@ -17,7 +17,12 @@ pkgver() {
   git describe --long --tags | sed 's/\([^-]*-g\)/r\1/;s/-/./g'
 }
 
-package() {
+build() {
   cd "${srcdir}/${pkgname%-git}"
-  python setup.py install --root="${pkgdir}"
+  python -m build
+}
+
+package() {
+  cd "${srcdir}/${pkgname%-git}/dist"
+  python -m installer -d $pkgdir *.whl
 }

@@ -1,6 +1,6 @@
 pkgname=mpd-custom
 conflicts=("mpd")
-pkgver=0.23.17
+pkgver=0.24.6
 pkgrel=1
 pkgdesc='Flexible, powerful, server-side application for playing music'
 url='http://www.musicpd.org/'
@@ -8,10 +8,10 @@ license=('GPL')
 arch=('i686' 'x86_64')
 depends=('ffmpeg' 'curl'
          'sqlite' 'wavpack' 'libid3tag' 'yajl' 'libmpdclient'
-         'icu' 'libupnp' 'libsamplerate' 'libsoxr' 'fmt' 'liburing')
-makedepends=('boost' 'doxygen' 'meson')
+         'icu' 'libsamplerate' 'libsoxr' 'fmt' 'liburing')
+makedepends=('meson')
 source=("https://www.musicpd.org/download/mpd/${pkgver%.*}/${pkgname%-custom}-${pkgver}.tar.xz")
-sha1sums=('1ba20cf903e2db0de9aeb88f5d21c80895b02ee8')
+sha1sums=('c54ce0ac844d61a06e2bb98865a7561a8ab56628')
 
 build() {
   # remove ipv6 support; use ffmpeg for mp3 decoding instead of mad;
@@ -19,62 +19,68 @@ build() {
   cd "${pkgname%-custom}-${pkgver}"
   mkdir "bbuild" && cd "bbuild"
   arch-meson .. \
-  -Dadplug=disabled \
-  -Dao=disabled \
-  -Daudiofile=disabled \
-  -Dbzip2=disabled \
-  -Dcdio_paranoia=disabled \
-  -Dchromaprint=disabled \
-  -Dcue=false \
-  -Dcurl=enabled \
   -Ddocumentation=disabled \
+  -Dhtml_manual=false \
+  -Ddoxygen=false \
+  -Dio_uring=enabled \
+  -Dtcp=true \
+  -Dipv6=disabled \
   -Ddsd=false \
-  -Dexpat=disabled \
+  -Dupnp=disabled \
+  -Dneighbor=false \
+  -Dudisks=disabled \
+  -Dwebdav=disabled \
+  -Dcue=false \
+  -Dcdio_paranoia=disabled \
+  -Dcurl=enabled \
+  -Dmms=disabled \
+  -Dnfs=disabled \
+  -Dsmbclient=disabled \
+  -Dqobuz=disabled \
+  -Dbzip2=disabled \
+  -Diso9660=disabled \
+  -Dzzip=disabled \
+  -Dchromaprint=disabled \
+  -Dadplug=disabled \
+  -Daudiofile=disabled \
   -Dfaad=disabled \
   -Dffmpeg=enabled \
-  -Dflac=enabled \
   -Dfluidsynth=disabled \
   -Dgme=disabled \
-  -Dipv6=disabled \
-  -Diso9660=disabled \
-  -Djack=disabled \
-  -Dlame=enabled \
   -Dmad=disabled \
   -Dmikmod=disabled \
-  -Dmms=disabled \
   -Dmodplug=disabled \
+  -Dopenmpt=disabled \
   -Dmpcdec=disabled \
   -Dmpg123=disabled \
-  -Dneighbor=false \
-  -Dnfs=disabled \
-  -Dopenal=disabled \
-  -Dopenmpt=disabled \
-  -Doss=disabled \
-  -Dpipewire=enabled \
-  -Dqobuz=disabled \
-  -Drecorder=false \
-  -Dshine=disabled \
-  -Dshout=disabled \
+  -Dopus=disabled \
   -Dsidplay=disabled \
-  -Dsmbclient=disabled \
   -Dsndfile=disabled \
+  -Dtremor=disabled \
+  -Dvorbis=disabled \
+  -Dwavpack=disabled \
+  -Dwildmidi=disabled \
+  -Dvorbisenc=disabled \
+  -Dtwolame=disabled \
+  -Dshine=disabled \
+  -Dwave_encoder=false \
+  -Dalsa=disabled \
+  -Dao=disabled \
+  -Dfifo=false \
+  -Djack=disabled \
+  -Dopenal=disabled \
+  -Doss=disabled \
+  -Dpipe=false \
+  -Dpulse=disabled \
+  -Drecorder=false \
+  -Dshout=disabled \
+  -Dsnapcast=false \
   -Dsndio=disabled \
   -Dsolaris_output=disabled \
-  -Dsoundcloud=disabled \
-  -Dsoxr=disabled \
-  -Dtremor=disabled \
-  -Dtwolame=disabled \
-  -Dupnp=disabled \
-  -Dvorbis=enabled \
-  -Dvorbisenc=disabled \
-  -Dwave_encoder=true \
-  -Dwavpack=disabled \
-  -Dwebdav=disabled \
-  -Dwildmidi=disabled \
-  -Dyajl=disabled \
+  -Dexpat=disabled \
+  -Dnlohmann_json=disabled \
   -Dzeroconf=disabled \
   -Dzlib=disabled \
-  -Dzzip=disabled \
 
   ninja
 }

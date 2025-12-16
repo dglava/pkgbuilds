@@ -1,5 +1,5 @@
 pkgname=labwc-noxwayland
-pkgver=0.9.0
+pkgver=0.9.2
 pkgrel=1
 pkgdesc="Stacking Wayland compositor - without Xwayland"
 arch=('x86_64')
@@ -10,7 +10,7 @@ depends=('wlroots0.19' 'cairo' 'pango' 'libxml2' 'glib2' 'libinput'
 makedepends=('meson' 'git' 'ninja' 'wayland-protocols')
 conflicts=('labwc' 'labwc-noxwayland-git')
 source=("https://github.com/labwc/labwc/archive/refs/tags/${pkgver}.tar.gz")
-sha256sums=('2d3ded90f78efb5060f7057ea802c78a79dc9b2e82ae7a2ad902af957b8b9797')
+sha256sums=('637b6cf8e78321d01958af439c580d58226ebdb6c4d531981609aa1d15ce648f')
 
 build() {
   cd "${srcdir}"/${pkgname%-noxwayland}-${pkgver}

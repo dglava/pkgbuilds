@@ -1,5 +1,5 @@
 pkgname=nomacs-git
-pkgver=3.2.0.r2336.gb4af068a
+pkgver=3.2.0.r2790.g11cd20e6
 pkgrel=1
 pkgdesc="A QT image viewer"
 arch=("x86_64")
@@ -22,6 +22,7 @@ build() {
   mkdir "build"
   cd "build"
   cmake .. -DCMAKE_INSTALL_PREFIX=/usr \
+           -DCMAKE_BUILD_TYPE=Release \
            -DENABLE_PLUGINS=OFF \
            -DENABLE_QUAZIP=OFF \
            -DENABLE_TESTING=OFF \

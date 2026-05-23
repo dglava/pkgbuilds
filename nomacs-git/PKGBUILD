@@ -1,5 +1,5 @@
 pkgname=nomacs-git
-pkgver=3.2.0.r2797.g88d9c67e
+pkgver=3.2.0.r2936.g82d46d63
 pkgrel=1
 pkgdesc="A QT image viewer"
 arch=("x86_64")

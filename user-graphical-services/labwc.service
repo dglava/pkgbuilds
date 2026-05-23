@@ -1,0 +1,9 @@
+[Unit]
+Description=Labwc Wayland compositor
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/labwc
+
+[Install]
+WantedBy=default.target

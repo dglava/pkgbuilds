@@ -6,35 +6,28 @@ arch=('any')
 url="http://dglava.github.io"
 license=('GPL-3.0-or-later')
 source=("battyicon.service"
-        "cbatticon.service"
+        "labwc.service"
         "mpdas.service"
         "mpd-custom.service"
         "nm-applet.service"
-        "orcsome.service"
-        "picom.service"
         "swaybg.service"
         "swayidle.service"
-        "tint2.service"
         "user-graphical.target"
         "waybar-custom.service"
         "wolumeicon.service"
         "xfce4-panel.service"
-        "xwallpaper.service")
+      )
 md5sums=('882ab0aab3f8e9d708bb0462c5046bdb'
-         '08b7126273a26371f1902a3ccc5afae2'
+         'e2bc216af64e0dbbddf2ed649281c153'
          '4cdc0241d33fe159841862519755bf60'
          'e9888e9f1618d531d22c6658bb61b828'
          '221684fb112527391126e669c3e31344'
-         '2f4c2352cc5777e14dc0159368beb1cb'
-         'ca1cc18a079dc48f5ba42eb8f521bf53'
          'f5ad870ad55aaea564e4026ae9f61951'
          '95f93a98b8c88da7848e5f4da6228aa4'
-         '50628d0cda3ece3befbec6dc5c660f95'
          '102b53f99ffe71ed9c3b02d60fe038ee'
          '31a6d4d0bd5cc3b139308932f2510476'
          'def9aa3df55f8151f7e1f2daf47cc0f9'
-         '93f1ae936cf24d18d006f17f5b8b62e6'
-         '8f16218680881d5d018e0239dafbb8cb')
+         '93f1ae936cf24d18d006f17f5b8b62e6')
 
 package() {
   cd "$srcdir"

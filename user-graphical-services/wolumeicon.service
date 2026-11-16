@@ -8,6 +8,7 @@ BindsTo=user-graphical.target
 [Service]
 Type=simple
 ExecStart=/usr/bin/wolumeicon -m pavucontrol
+Restart=on-failure
 
 [Install]
 WantedBy=user-graphical.target

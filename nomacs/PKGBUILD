@@ -1,0 +1,34 @@
+pkgname=nomacs
+pkgver=3.23
+pkgrel=1
+pkgdesc="A QT image viewer"
+arch=("x86_64")
+url="http://www.nomacs.org/"
+license=('GPL-3.0-only')
+conflicts=('nomacs-git')
+depends=('qt6-base' 'qt6-imageformats' 'qt6-svg' 'exiv2'
+        'desktop-file-utils' 'opencv')
+makedepends=("cmake" "qt6-tools" "git")
+source=("https://github.com/nomacs/nomacs/archive/refs/tags/${pkgver}.tar.gz")
+sha1sums=('172ca599549e33bb949fb9b79572762f9c95e6b9')
+
+build() {
+  cd "${pkgname}-${pkgver}/ImageLounge"
+  mkdir "build"
+  cd "build"
+  cmake .. -DCMAKE_INSTALL_PREFIX=/usr \
+           -DCMAKE_BUILD_TYPE=Release \
+           -DENABLE_PLUGINS=OFF \
+           -DENABLE_OPENCV=ON \
+           -DENABLE_QUAZIP=OFF \
+           -DENABLE_TESTING=OFF \
+           -DENABLE_TIFF=OFF \
+           -DENABLE_RAW=OFF \
+           -DQT_VERSION_MAJOR=6
+  make
+}
+
+package() {
+  cd "${pkgname}-${pkgver}/ImageLounge/build"
+  make DESTDIR="$pkgdir/" install
+}

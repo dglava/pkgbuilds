@@ -1,5 +1,5 @@
 pkgname=nomacs-git
-pkgver=3.2.0.r2936.g82d46d63
+pkgver=3.2.0.r3133.g7633e737
 pkgrel=1
 pkgdesc="A QT image viewer"
 arch=("x86_64")
@@ -7,7 +7,7 @@ url="http://www.nomacs.org/"
 license=('GPL-3.0-only')
 conflicts=('nomacs')
 depends=('qt6-base' 'qt6-imageformats' 'qt6-svg' 'exiv2'
-         'libraw' 'opencv' 'desktop-file-utils')
+         'desktop-file-utils' 'opencv')
 makedepends=("cmake" "qt6-tools" "git")
 source=("git+https://github.com/nomacs/nomacs.git")
 md5sums=('SKIP')
@@ -24,6 +24,7 @@ build() {
   cmake .. -DCMAKE_INSTALL_PREFIX=/usr \
            -DCMAKE_BUILD_TYPE=Release \
            -DENABLE_PLUGINS=OFF \
+           -DENABLE_OPENCV=ON \
            -DENABLE_QUAZIP=OFF \
            -DENABLE_TESTING=OFF \
            -DENABLE_TIFF=OFF \
